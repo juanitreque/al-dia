@@ -1,0 +1,3185 @@
+{
+  "sourceLanguage": "es",
+  "strings": {
+    "": {
+      "shouldTranslate": false
+    },
+    " ": {
+      "shouldTranslate": false
+    },
+    "%@ de ingresos con retención: no estás obligado a presentar el 130.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ of income has withholding: you don't need to file Form 130."
+          }
+        }
+      }
+    },
+    "%@ · %@ · %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ · %2$@ · %3$@"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "%@: pendiente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: pending"
+          }
+        }
+      }
+    },
+    "%@: presentado el %@ · %@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: filed on %@ · %@ %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@: presentado el %2$@ · %3$@ %4$@"
+          }
+        }
+      }
+    },
+    "%lld": {
+      "shouldTranslate": false
+    },
+    "%lld %%": {
+      "shouldTranslate": false
+    },
+    "%lld factura(s)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld invoice(s)"
+          }
+        }
+      }
+    },
+    "%lld factura(s) en borrador pendientes de emitir en la AEAT: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld draft invoice(s) waiting to be issued with the AEAT: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld factura(s) en borrador pendientes de emitir en la AEAT: %2$@"
+          }
+        }
+      }
+    },
+    "%lldT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Q%lld"
+          }
+        }
+      }
+    },
+    "%lldT %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Q%lld %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lldT %2$@"
+          }
+        }
+      }
+    },
+    "0": {
+      "shouldTranslate": false
+    },
+    "0,00": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "0.00"
+          }
+        }
+      }
+    },
+    "1 · Destinatario (Seleccionar destinatario)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 · Recipient (Seleccionar destinatario)"
+          }
+        }
+      }
+    },
+    "100 · Renta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "100 · Annual income tax return"
+          }
+        }
+      }
+    },
+    "130 · Pago fraccionado IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "130 · Income tax prepayment"
+          }
+        }
+      }
+    },
+    "15 % (general)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 % (standard)"
+          }
+        }
+      }
+    },
+    "2 · Datos de la factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 · Invoice details"
+          }
+        }
+      }
+    },
+    "20 % del rendimiento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "20 % of net income"
+          }
+        }
+      }
+    },
+    "2026-001": {
+      "shouldTranslate": false
+    },
+    "3 · Productos (Recuperar producto/servicio)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 · Products (Recuperar producto/servicio)"
+          }
+        }
+      }
+    },
+    "303 estimado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimated 303"
+          }
+        }
+      }
+    },
+    "303 · IVA trimestral": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "303 · Quarterly VAT"
+          }
+        }
+      }
+    },
+    "347 · Operaciones con terceros": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "347 · Third-party transactions"
+          }
+        }
+      }
+    },
+    "390 · Resumen anual IVA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "390 · Annual VAT summary"
+          }
+        }
+      }
+    },
+    "4 · Ajustes de la factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4 · Invoice adjustments (Ajustes de la factura)"
+          }
+        }
+      }
+    },
+    "5 · Comprueba antes de firmar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 · Check before signing"
+          }
+        }
+      }
+    },
+    "6 · Ya emitida: completa con los datos oficiales": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "6 · Issued: fill in the official details"
+          }
+        }
+      }
+    },
+    "7 % (primeros 3 años de actividad)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 % (first 3 years of activity)"
+          }
+        }
+      }
+    },
+    "A compensar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To carry forward"
+          }
+        }
+      }
+    },
+    "A devolver": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To be refunded"
+          }
+        }
+      }
+    },
+    "A ingresar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To pay"
+          }
+        }
+      }
+    },
+    "A ingresar %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To pay %@"
+          }
+        }
+      }
+    },
+    "Abrir documento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open document"
+          }
+        }
+      }
+    },
+    "Abrir justificante": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open receipt"
+          }
+        }
+      }
+    },
+    "Abrir la app de la AEAT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the AEAT app"
+          }
+        }
+      }
+    },
+    "Adjunta el PDF que descargas de la AEAT (lleva el código QR).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attach the PDF you download from the AEAT (it has the QR code)."
+          }
+        }
+      }
+    },
+    "Adjuntar…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attach…"
+          }
+        }
+      }
+    },
+    "Al Día": {
+      "shouldTranslate": false
+    },
+    "Amazon, Movistar…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amazon, Movistar…"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "Anual": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annual"
+          }
+        }
+      }
+    },
+    "Anual: 2027-001, 2027-002…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yearly: 2027-001, 2027-002…"
+          }
+        }
+      }
+    },
+    "Aplicación gratuita VERI*FACTU → Emisión de facturas. Copia cada dato con su botón.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free VERI*FACTU app → Emisión de facturas. Copy each field with its button."
+          }
+        }
+      }
+    },
+    "Archivo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File"
+          }
+        }
+      }
+    },
+    "Arrastra aquí un PDF o imagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drop a PDF or image here"
+          }
+        }
+      }
+    },
+    "Asesoría Lumen, SL": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lumen Advisors, SL"
+          }
+        }
+      }
+    },
+    "Asesoría fiscal trimestral": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quarterly tax advice"
+          }
+        }
+      }
+    },
+    "Añadir línea": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add line"
+          }
+        }
+      }
+    },
+    "Año completo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full year"
+          }
+        }
+      }
+    },
+    "Aún no hay datos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No data yet"
+          }
+        }
+      }
+    },
+    "Base": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Base"
+          }
+        }
+      }
+    },
+    "Base + IVA − retención no da el total": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Base + VAT − withholding doesn't match the total"
+          }
+        }
+      }
+    },
+    "Base bienes de inversión": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Base, capital goods"
+          }
+        }
+      }
+    },
+    "Base de datos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Database"
+          }
+        }
+      }
+    },
+    "Base imponible": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taxable base"
+          }
+        }
+      }
+    },
+    "Base imponible al %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taxable base at %@"
+          }
+        }
+      }
+    },
+    "Base operaciones interiores corrientes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Base, domestic current purchases"
+          }
+        }
+      }
+    },
+    "Base total: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total base: %@"
+          }
+        }
+      }
+    },
+    "Bien de inversión": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capital good"
+          }
+        }
+      }
+    },
+    "Bien de inversión (se amortiza)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capital good (depreciated)"
+          }
+        }
+      }
+    },
+    "Borrador": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft"
+          }
+        }
+      }
+    },
+    "Borradores": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drafts"
+          }
+        }
+      }
+    },
+    "C/ Mayor, 1": {
+      "shouldTranslate": false
+    },
+    "CONSULTORIA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CONSULTING"
+          }
+        }
+      }
+    },
+    "Cafetería La Plaza, SL": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Plaza Café, SL"
+          }
+        }
+      }
+    },
+    "Calcular trimestre": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quarter calculator"
+          }
+        }
+      }
+    },
+    "Cancelar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "Cantidad": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quantity"
+          }
+        }
+      }
+    },
+    "Casilla": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Box"
+          }
+        }
+      }
+    },
+    "Categoría": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Category"
+          }
+        }
+      }
+    },
+    "Cerrar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        }
+      }
+    },
+    "Cliente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client"
+          }
+        }
+      }
+    },
+    "Clientes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clients"
+          }
+        }
+      }
+    },
+    "Cobrada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paid"
+          }
+        }
+      }
+    },
+    "Cobro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment"
+          }
+        }
+      }
+    },
+    "Cobros": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payments"
+          }
+        }
+      }
+    },
+    "Comisiones bancarias": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bank fees"
+          }
+        }
+      }
+    },
+    "Compra": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase"
+          }
+        }
+      }
+    },
+    "Con el 4T: modelo 390 (resumen anual de IVA)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With Q4: Form 390 (annual VAT summary)"
+          }
+        }
+      }
+    },
+    "Concepto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Description"
+          }
+        }
+      }
+    },
+    "Continuar el de la última factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue from the last invoice"
+          }
+        }
+      }
+    },
+    "Copiar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy"
+          }
+        }
+      }
+    },
+    "Correcta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Cuota de IVA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT amount"
+          }
+        }
+      }
+    },
+    "Cuota de autónomos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Self-employed contribution"
+          }
+        }
+      }
+    },
+    "Cuota de autónomos (RETA)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Self-employed social security (RETA)"
+          }
+        }
+      }
+    },
+    "Cuota deducible bienes de inversión": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductible VAT, capital goods"
+          }
+        }
+      }
+    },
+    "Cuota deducible operaciones corrientes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductible VAT, current purchases"
+          }
+        }
+      }
+    },
+    "Cuota devengada al %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Output VAT at %@"
+          }
+        }
+      }
+    },
+    "Cuotas a compensar de periodos anteriores": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT credit from previous periods"
+          }
+        }
+      }
+    },
+    "Curso de formación": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training course"
+          }
+        }
+      }
+    },
+    "Cálculo orientativo para revisar antes de presentar en la sede de la AEAT. Compruébalo siempre contra el formulario oficial.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indicative calculation to review before filing at the AEAT website. Always check it against the official form."
+          }
+        }
+      }
+    },
+    "Código": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code"
+          }
+        }
+      }
+    },
+    "Código postal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Postcode"
+          }
+        }
+      }
+    },
+    "Da de alta las empresas o personas a las que facturas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add the companies or people you invoice."
+          }
+        }
+      }
+    },
+    "Datos leídos del documento: revísalos antes de guardar, sobre todo importes y fecha.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data read from the document: check it before saving, especially amounts and date."
+          }
+        }
+      }
+    },
+    "Declaraciones del %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ tax returns"
+          }
+        }
+      }
+    },
+    "Declaración": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Return"
+          }
+        }
+      }
+    },
+    "Declaración negativa (0 € a ingresar)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nil return (0 € to pay)"
+          }
+        }
+      }
+    },
+    "Deduces de IVA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductible VAT"
+          }
+        }
+      }
+    },
+    "Deducibilidad": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductibility"
+          }
+        }
+      }
+    },
+    "Descripción": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Description"
+          }
+        }
+      }
+    },
+    "Dirección": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address"
+          }
+        }
+      }
+    },
+    "Diseño de página web": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Website design"
+          }
+        }
+      }
+    },
+    "Documento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Document"
+          }
+        }
+      }
+    },
+    "Duplicar como borrador…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duplicate as draft…"
+          }
+        }
+      }
+    },
+    "Duplicar…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duplicate…"
+          }
+        }
+      }
+    },
+    "Editar…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit…"
+          }
+        }
+      }
+    },
+    "Ejercicio": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax year"
+          }
+        }
+      }
+    },
+    "Ejercicio %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax year %@"
+          }
+        }
+      }
+    },
+    "El IVA no deducible se suma al gasto de IRPF.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non-deductible VAT is added to the income tax expense."
+          }
+        }
+      }
+    },
+    "El código es el ID en la app de la AEAT: sin espacios.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The code is the ID in the AEAT app: no spaces."
+          }
+        }
+      }
+    },
+    "El plazo termina hoy.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The deadline is today."
+          }
+        }
+      }
+    },
+    "El plazo terminó el %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The deadline was %@."
+          }
+        }
+      }
+    },
+    "Elige tu serie: la AEAT pone el número": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick your series: the AEAT assigns the number"
+          }
+        }
+      }
+    },
+    "Eliminar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        }
+      }
+    },
+    "Eliminar…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete…"
+          }
+        }
+      }
+    },
+    "Email": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
+          }
+        }
+      }
+    },
+    "Emite la factura en la app gratuita de la AEAT y regístrala aquí en Ingresos. Apunta tus compras en Gastos.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepare invoices in Income, issue them with the free AEAT app, and log your purchases in Expenses."
+          }
+        }
+      }
+    },
+    "Emitida": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issued"
+          }
+        }
+      }
+    },
+    "Emitidas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issued"
+          }
+        }
+      }
+    },
+    "Emitir %@ en la AEAT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue %@ with the AEAT"
+          }
+        }
+      }
+    },
+    "Emitir en la AEAT…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue with the AEAT…"
+          }
+        }
+      }
+    },
+    "Escuela online": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online school"
+          }
+        }
+      }
+    },
+    "Espacio de coworking": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coworking space"
+          }
+        }
+      }
+    },
+    "Estado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status"
+          }
+        }
+      }
+    },
+    "Exportar CSV": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export CSV"
+          }
+        }
+      }
+    },
+    "Exportar para la AEAT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export for the AEAT"
+          }
+        }
+      }
+    },
+    "F": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "F"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "Factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice"
+          }
+        }
+      }
+    },
+    "Factura completa a mi nombre y NIF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full invoice with my name and NIF"
+          }
+        }
+      }
+    },
+    "Facturado (base)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoiced (base)"
+          }
+        }
+      }
+    },
+    "Facturas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoices"
+          }
+        }
+      }
+    },
+    "Fecha": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date"
+          }
+        }
+      }
+    },
+    "Fecha de cobro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment date"
+          }
+        }
+      }
+    },
+    "Fecha de expedición": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue date"
+          }
+        }
+      }
+    },
+    "Fecha de presentación": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filing date"
+          }
+        }
+      }
+    },
+    "Fichero para Otros servicios → Clientes → Importar en la app de la AEAT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File for Otros servicios → Clientes → Importar in the AEAT app"
+          }
+        }
+      }
+    },
+    "Fichero para Otros servicios → Productos → Importar en la app de la AEAT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File for Otros servicios → Productos → Importar in the AEAT app"
+          }
+        }
+      }
+    },
+    "Formación y certificaciones": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training and certifications"
+          }
+        }
+      }
+    },
+    "Formato": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Format"
+          }
+        }
+      }
+    },
+    "Gasto IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income tax expense"
+          }
+        }
+      }
+    },
+    "Gasto deducible en IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductible for income tax"
+          }
+        }
+      }
+    },
+    "Gasto para IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income tax expense"
+          }
+        }
+      }
+    },
+    "Gastos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expenses"
+          }
+        }
+      }
+    },
+    "Gastos %@.csv": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expenses %@.csv"
+          }
+        }
+      }
+    },
+    "Gastos deducibles IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductible expenses"
+          }
+        }
+      }
+    },
+    "Gastos fiscalmente deducibles": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax-deductible expenses"
+          }
+        }
+      }
+    },
+    "Gestoría Ejemplo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Example Accountants"
+          }
+        }
+      }
+    },
+    "Gestoría y asesoría": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accountant and advisory"
+          }
+        }
+      }
+    },
+    "Guardar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        }
+      }
+    },
+    "Hora de consultoría": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consulting hour"
+          }
+        }
+      }
+    },
+    "IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Withholding"
+          }
+        }
+      }
+    },
+    "IVA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT"
+          }
+        }
+      }
+    },
+    "IVA deducible": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductible VAT"
+          }
+        }
+      }
+    },
+    "IVA devengado al 21 %": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Output VAT at 21 %"
+          }
+        }
+      }
+    },
+    "IVA repercutido": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Output VAT"
+          }
+        }
+      }
+    },
+    "IVA soportado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Input VAT"
+          }
+        }
+      }
+    },
+    "Importar %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import %lld"
+          }
+        }
+      }
+    },
+    "Importar PDF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import PDF"
+          }
+        }
+      }
+    },
+    "Importar facturas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import invoices"
+          }
+        }
+      }
+    },
+    "Importar facturas PDF…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import PDF invoices…"
+          }
+        }
+      }
+    },
+    "Importar facturas desde sus PDF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import invoices from their PDFs"
+          }
+        }
+      }
+    },
+    "Importar ticket o factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import receipt or invoice"
+          }
+        }
+      }
+    },
+    "Importar ticket o factura…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import receipt or invoice…"
+          }
+        }
+      }
+    },
+    "Importe": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amount"
+          }
+        }
+      }
+    },
+    "Importe retenido": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amount withheld"
+          }
+        }
+      }
+    },
+    "Importes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amounts"
+          }
+        }
+      }
+    },
+    "Ingresos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income"
+          }
+        }
+      }
+    },
+    "Ingresos %@.csv": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income %@.csv"
+          }
+        }
+      }
+    },
+    "Ingresos (base)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income (base)"
+          }
+        }
+      }
+    },
+    "Ingresos computables (1 ene – fin del trimestre)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taxable income (1 Jan – end of quarter)"
+          }
+        }
+      }
+    },
+    "Ir a ingresos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go to income"
+          }
+        }
+      }
+    },
+    "Ir a modelos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go to tax forms"
+          }
+        }
+      }
+    },
+    "Justificante": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Receipt"
+          }
+        }
+      }
+    },
+    "Justificante / NRC / CSV": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Receipt / NRC / CSV"
+          }
+        }
+      }
+    },
+    "La cuota de IVA no corresponde al tipo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT amount doesn't match the rate"
+          }
+        }
+      }
+    },
+    "La numeración anual vuelve a 001 cada 1 de enero. Usa el mismo formato en la serie de la app de la AEAT.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yearly numbering restarts at 001 every 1 January. Use the same format for your series in the AEAT app."
+          }
+        }
+      }
+    },
+    "Las facturas ya hechas conservan sus líneas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Existing invoices keep their lines."
+          }
+        }
+      }
+    },
+    "Las líneas no suman la base": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lines don't add up to the base"
+          }
+        }
+      }
+    },
+    "Leyendo el documento…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reading the document…"
+          }
+        }
+      }
+    },
+    "Libro de facturas emitidas (CSV para Excel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issued invoices ledger (CSV for Excel)"
+          }
+        }
+      }
+    },
+    "Libro de facturas recibidas y gastos (CSV para Excel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Received invoices and expenses ledger (CSV for Excel)"
+          }
+        }
+      }
+    },
+    "Los bienes de inversión no cuentan como gasto del año en IRPF: se amortizan (pregunta a tu gestor el coeficiente).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capital goods are not a same-year income tax expense: they are depreciated (ask your accountant for the rate)."
+          }
+        }
+      }
+    },
+    "Los conceptos que facturas (p. ej. una hora de consultoría a 40 €). Se crean solos al importar facturas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What you invoice (e.g. an hour of consulting at 40 €). Created automatically when importing invoices."
+          }
+        }
+      }
+    },
+    "Los datos y documentos adjuntos se guardan en ~/Library/Application Support/AlDia. Time Machine los incluye en sus copias.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data and attachments are stored in ~/Library/Application Support/AlDia. Time Machine includes them in its backups."
+          }
+        }
+      }
+    },
+    "Línea libre": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom line"
+          }
+        }
+      }
+    },
+    "Línea móvil": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mobile line"
+          }
+        }
+      }
+    },
+    "Líneas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lines"
+          }
+        }
+      }
+    },
+    "Mantenimiento web mensual": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly website maintenance"
+          }
+        }
+      }
+    },
+    "Marcar como cobrada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as paid"
+          }
+        }
+      }
+    },
+    "Marcar como emitida": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as issued"
+          }
+        }
+      }
+    },
+    "Marcar como pendiente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as unpaid"
+          }
+        }
+      }
+    },
+    "Marcarlas como cobradas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark them as paid"
+          }
+        }
+      }
+    },
+    "Material y equipamiento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equipment and supplies"
+          }
+        }
+      }
+    },
+    "Modelo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form"
+          }
+        }
+      }
+    },
+    "Modelo 130": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form 130"
+          }
+        }
+      }
+    },
+    "Modelo 130 · Pago fraccionado IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form 130 · Income tax prepayment"
+          }
+        }
+      }
+    },
+    "Modelo 130: no obligatorio (%@ de ingresos con retención)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form 130: not required (%@ of income has withholding)"
+          }
+        }
+      }
+    },
+    "Modelo 303": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form 303"
+          }
+        }
+      }
+    },
+    "Modelo 303 · IVA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form 303 · VAT"
+          }
+        }
+      }
+    },
+    "Modelos fiscales": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax forms"
+          }
+        }
+      }
+    },
+    "Mostrar en Finder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show in Finder"
+          }
+        }
+      }
+    },
+    "NIF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NIF"
+          }
+        }
+      }
+    },
+    "NIF / CIF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax ID (NIF / CIF)"
+          }
+        }
+      }
+    },
+    "NIF proveedor": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supplier NIF"
+          }
+        }
+      }
+    },
+    "Negativa / cero": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nil / negative"
+          }
+        }
+      }
+    },
+    "Negativo: a compensar en el siguiente trimestre": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Negative: carried forward to next quarter"
+          }
+        }
+      }
+    },
+    "Negativo: a compensar o solicitar devolución": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Negative: carry forward or request a refund"
+          }
+        }
+      }
+    },
+    "No reconocida": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not recognised"
+          }
+        }
+      }
+    },
+    "No se encontraron líneas de detalle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No line items found"
+          }
+        }
+      }
+    },
+    "No se encontró el NIF del cliente": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client NIF not found"
+          }
+        }
+      }
+    },
+    "Nombre": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "Nombre o razón social": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name or company name"
+          }
+        }
+      }
+    },
+    "Notas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notes"
+          }
+        }
+      }
+    },
+    "Nueva factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New invoice"
+          }
+        }
+      }
+    },
+    "Nuevo cliente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New client"
+          }
+        }
+      }
+    },
+    "Nuevo gasto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New expense"
+          }
+        }
+      }
+    },
+    "Nuevo servicio": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New service"
+          }
+        }
+      }
+    },
+    "Numeración de facturas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice numbering"
+          }
+        }
+      }
+    },
+    "Nº": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No."
+          }
+        }
+      }
+    },
+    "Nº de factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice no."
+          }
+        }
+      }
+    },
+    "Número": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number"
+          }
+        }
+      }
+    },
+    "Número de modelo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form number"
+          }
+        }
+      }
+    },
+    "Número oficial": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Official number"
+          }
+        }
+      }
+    },
+    "Operador móvil": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mobile operator"
+          }
+        }
+      }
+    },
+    "Otro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "Otros": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "Pago fraccionado previo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepayment due"
+          }
+        }
+      }
+    },
+    "Pagos fraccionados de trimestres anteriores": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepayments from previous quarters"
+          }
+        }
+      }
+    },
+    "Panel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard"
+          }
+        }
+      }
+    },
+    "Papelería Ejemplo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Example Stationery"
+          }
+        }
+      }
+    },
+    "País (código)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Country (code)"
+          }
+        }
+      }
+    },
+    "Pendiente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpaid"
+          }
+        }
+      }
+    },
+    "Pendiente de cobro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpaid"
+          }
+        }
+      }
+    },
+    "Periodo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Period"
+          }
+        }
+      }
+    },
+    "Plazo hasta el %@ · quedan %lld días.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Due by %@ · %lld days left."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Plazo hasta el %1$@ · quedan %2$lld días."
+          }
+        }
+      }
+    },
+    "Plazo: hasta el %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Due by %@"
+          }
+        }
+      }
+    },
+    "Población": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Town"
+          }
+        }
+      }
+    },
+    "Precio": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Price"
+          }
+        }
+      }
+    },
+    "Precio unitario": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unit price"
+          }
+        }
+      }
+    },
+    "Precio unitario (sin IVA)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unit price (excl. VAT)"
+          }
+        }
+      }
+    },
+    "Prefijo (opcional)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prefix (optional)"
+          }
+        }
+      }
+    },
+    "Prepara una factura con + o importa los PDF de tus facturas anteriores.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepare an invoice with + or import the PDFs of your past invoices."
+          }
+        }
+      }
+    },
+    "Preparar una factura (borrador)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepare an invoice (draft)"
+          }
+        }
+      }
+    },
+    "Presentado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filed"
+          }
+        }
+      }
+    },
+    "Presentado el %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filed on %@"
+          }
+        }
+      }
+    },
+    "Presentados": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filed"
+          }
+        }
+      }
+    },
+    "Proveedor": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supplier"
+          }
+        }
+      }
+    },
+    "Proveedor de software": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Software vendor"
+          }
+        }
+      }
+    },
+    "Provincia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Province"
+          }
+        }
+      }
+    },
+    "Próxima factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next invoice"
+          }
+        }
+      }
+    },
+    "Puesto fijo mensual": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly fixed desk"
+          }
+        }
+      }
+    },
+    "Pulsa + para apuntar una compra, o importa la foto o el PDF de un ticket o factura.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press + to log a purchase, or import the photo or PDF of a receipt or invoice."
+          }
+        }
+      }
+    },
+    "Quitar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove"
+          }
+        }
+      }
+    },
+    "Quitar línea": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove line"
+          }
+        }
+      }
+    },
+    "Registra aquí cada modelo que presentes, con su justificante.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log every tax form you file here, with its receipt."
+          }
+        }
+      }
+    },
+    "Registrar modelo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log tax form"
+          }
+        }
+      }
+    },
+    "Registrar presentación…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log filing…"
+          }
+        }
+      }
+    },
+    "Registrar un ingreso": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add income"
+          }
+        }
+      }
+    },
+    "Rellenar gastos leyendo la foto o el PDF de sus tickets o facturas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fill in expenses by reading the photo or PDF of their receipts or invoices"
+          }
+        }
+      }
+    },
+    "Rendimiento neto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Net income"
+          }
+        }
+      }
+    },
+    "Resultado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Result"
+          }
+        }
+      }
+    },
+    "Resultado de la liquidación": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Return result"
+          }
+        }
+      }
+    },
+    "Resultado régimen general": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General regime result"
+          }
+        }
+      }
+    },
+    "Retenciones": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Withholdings"
+          }
+        }
+      }
+    },
+    "Retenciones soportadas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax withheld"
+          }
+        }
+      }
+    },
+    "Retención": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Withholding"
+          }
+        }
+      }
+    },
+    "Retención IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income tax withholding"
+          }
+        }
+      }
+    },
+    "Retención global (%)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retención global (%)"
+          }
+        }
+      }
+    },
+    "Revisa los datos leídos de cada PDF. Se importan como facturas emitidas, con el PDF adjunto.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check the data read from each PDF. They are imported as issued invoices, with the PDF attached."
+          }
+        }
+      }
+    },
+    "Seguridad Social": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Social Security"
+          }
+        }
+      }
+    },
+    "Seguros": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insurance"
+          }
+        }
+      }
+    },
+    "Serie y número": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Series and number"
+          }
+        }
+      }
+    },
+    "Servicios": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Services"
+          }
+        }
+      }
+    },
+    "Servicios %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Services %@"
+          }
+        }
+      }
+    },
+    "Servicios octubre 2026": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Services October 2026"
+          }
+        }
+      }
+    },
+    "Sin actividad / resultado cero": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No activity / zero result"
+          }
+        }
+      }
+    },
+    "Sin cliente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No client"
+          }
+        }
+      }
+    },
+    "Sin clientes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No clients"
+          }
+        }
+      }
+    },
+    "Sin declaraciones registradas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No returns logged"
+          }
+        }
+      }
+    },
+    "Sin factura completa: el IVA no es deducible": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No full invoice: VAT is not deductible"
+          }
+        }
+      }
+    },
+    "Sin gastos en %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No expenses in %@"
+          }
+        }
+      }
+    },
+    "Sin ingresos en %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No income in %@"
+          }
+        }
+      }
+    },
+    "Sin retención": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No withholding"
+          }
+        }
+      }
+    },
+    "Sin servicios": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No services"
+          }
+        }
+      }
+    },
+    "Software y suscripciones": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Software and subscriptions"
+          }
+        }
+      }
+    },
+    "Solo se borra de Al Día; una factura ya emitida en la AEAT no cambia.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This only deletes it from Al Día; an invoice already issued with the AEAT does not change."
+          }
+        }
+      }
+    },
+    "Sus ingresos se conservan, pero quedarán sin cliente asignado.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Their income is kept, but without a client."
+          }
+        }
+      }
+    },
+    "Suscripción de software": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Software subscription"
+          }
+        }
+      }
+    },
+    "Teléfono": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phone"
+          }
+        }
+      }
+    },
+    "Teléfono e internet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phone and internet"
+          }
+        }
+      }
+    },
+    "Tipo de IVA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT rate"
+          }
+        }
+      }
+    },
+    "Total": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total"
+          }
+        }
+      }
+    },
+    "Total a cobrar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total due"
+          }
+        }
+      }
+    },
+    "Total a deducir": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total deductible"
+          }
+        }
+      }
+    },
+    "Total cuota devengada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total output VAT"
+          }
+        }
+      }
+    },
+    "Total pagado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total paid"
+          }
+        }
+      }
+    },
+    "Trimestre": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quarter"
+          }
+        }
+      }
+    },
+    "Trimestre en curso · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current quarter · %@"
+          }
+        }
+      }
+    },
+    "Tus datos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your details"
+          }
+        }
+      }
+    },
+    "Tóner y papel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toner and paper"
+          }
+        }
+      }
+    },
+    "Un borrador no cuenta para impuestos. Al emitirlo en la AEAT pondrás el número oficial.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A draft doesn't count for taxes. When you issue it with the AEAT you'll enter the official number."
+          }
+        }
+      }
+    },
+    "Un ticket o factura simplificada sin tu NIF no permite deducir el IVA; pide factura completa.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A receipt or simplified invoice without your NIF doesn't allow VAT deduction; ask for a full invoice."
+          }
+        }
+      }
+    },
+    "Validar/Generar factura → Firmar y enviar → Conforme. Después pulsa Descargar → PDF.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Validar/Generar factura → Firmar y enviar → Conforme. Then click Descargar → PDF."
+          }
+        }
+      }
+    },
+    "Valores por defecto en ingresos nuevos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defaults for new income"
+          }
+        }
+      }
+    },
+    "Vehículo de uso mixto: Hacienda presume afectación del 50 % para IVA; en IRPF solo si el uso es exclusivo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mixed-use vehicle: the tax office assumes 50 % business use for VAT; for income tax only if used exclusively for business."
+          }
+        }
+      }
+    },
+    "Vehículo y desplazamientos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vehicle and travel"
+          }
+        }
+      }
+    },
+    "Vista": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View"
+          }
+        }
+      }
+    },
+    "Ya existe": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Already exists"
+          }
+        }
+      }
+    },
+    "a compensar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "to carry forward"
+          }
+        }
+      }
+    },
+    "a descontar en la renta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "credited in your annual return"
+          }
+        }
+      }
+    },
+    "a ingresar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "to pay"
+          }
+        }
+      }
+    },
+    "todo cobrado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "all paid"
+          }
+        }
+      }
+    },
+    "¿Eliminar %lld cliente(s)?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete %lld client(s)?"
+          }
+        }
+      }
+    },
+    "¿Eliminar %lld factura(s)?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete %lld invoice(s)?"
+          }
+        }
+      }
+    },
+    "¿Eliminar %lld gasto(s)?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete %lld expense(s)?"
+          }
+        }
+      }
+    },
+    "¿Eliminar %lld registro(s)?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete %lld record(s)?"
+          }
+        }
+      }
+    },
+    "¿Eliminar %lld servicio(s)?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete %lld service(s)?"
+          }
+        }
+      }
+    },
+    "×": {
+      "shouldTranslate": false
+    }
+  },
+  "version": "1.0"
+}
