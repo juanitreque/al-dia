@@ -14,6 +14,7 @@ struct AjustesView: View {
     @AppStorage(Ajustes.telefono) private var telefono = ""
     @AppStorage(Ajustes.iban) private var iban = ""
     @AppStorage(Ajustes.pieFactura) private var pie = ""
+    @AppStorage(Ajustes.emailGestor) private var emailGestor = ""
     @AppStorage(Ajustes.ivaDefecto) private var iva = 21
     @AppStorage(Ajustes.retencionDefecto) private var retencion = 15
     @AppStorage(Ajustes.formatoNumeracion) private var formato = "anual"
@@ -58,6 +59,9 @@ struct AjustesView: View {
                 }
             } header: {
                 Text("Valores por defecto en ingresos nuevos")
+            }
+            Section("Gestoría") {
+                TextField("Email del gestor", text: $emailGestor, prompt: Text("gestoria@ejemplo.es"))
             }
             Section {
                 Picker("Formato", selection: $formato) {

@@ -17,6 +17,7 @@ enum Ajustes {
     static let telefono = "emisor.telefono"
     static let iban = "emisor.iban"
     static let pieFactura = "factura.pie"
+    static let emailGestor = "gestor.email"
 
     static func texto(_ clave: String) -> String {
         (UserDefaults.standard.string(forKey: clave) ?? "").trimmingCharacters(in: .whitespacesAndNewlines)

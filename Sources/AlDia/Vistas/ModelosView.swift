@@ -53,6 +53,7 @@ private struct CalculadoraTrimestre: View {
 
     @State private var trimestre = Trimestre.aPresentar(hoy: .now)
     @State private var borrador: Borrador?
+    @State private var paquete = false
 
     var body: some View {
         let datosIngresos = ingresos.map(\.datos)
@@ -71,6 +72,10 @@ private struct CalculadoraTrimestre: View {
                     Spacer()
                     Text("Plazo: hasta el \(trimestre.plazoPresentacion.formatted(.dateTime.day().month(.wide).year()))")
                         .foregroundStyle(.secondary)
+                    Button { paquete = true } label: {
+                        Label("Paquete para el gestor…", systemImage: "shippingbox")
+                    }
+                    .help("Zip con resumen, libros y documentos del trimestre, listo para enviar por correo")
                 }
 
                 Tarjeta(titulo: "Modelo 303 · IVA", presentado: modelos.first { $0.corresponde(a: .m303, trimestre) }) {
@@ -134,22 +139,15 @@ private struct CalculadoraTrimestre: View {
             }
             .padding(24)
         }
+        .sheet(isPresented: $paquete) { PaqueteGestorView(trimestre: trimestre) }
         .sheet(item: $borrador) { b in
             ModeloEditor(tipo: b.tipo, trimestre: b.trimestre, resultado: b.resultado)
         }
     }
 
-    private var pagos130Anteriores: Decimal {
-        modelos.filter {
-            $0.tipo == .m130 && $0.ejercicio == trimestre.ejercicio && $0.tipoResultado == .ingresar
-                && $0.periodo < trimestre.periodo
-        }.suma(\.importe)
-    }
+    private var pagos130Anteriores: Decimal { modelos.pagos130Anteriores(a: trimestre) }
 
-    private var pendienteCompensar303: Decimal {
-        let anterior = trimestre.anterior
-        return modelos.first { $0.corresponde(a: .m303, anterior) && $0.tipoResultado == .compensar }?.importe ?? 0
-    }
+    private var pendienteCompensar303: Decimal { modelos.pendienteCompensar303(en: trimestre) }
 
     private func sentido303(_ r: Decimal) -> String {
         if r > 0 { return String(localized: "A ingresar \(r.euros)") }

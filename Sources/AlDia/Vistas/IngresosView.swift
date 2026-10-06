@@ -132,7 +132,7 @@ struct IngresosView: View {
         } message: {
             Text("Solo se borra de Al Día; una factura ya emitida en la AEAT no cambia.")
         }
-        .fileExporter(isPresented: $exportando, document: csv(emitidas), contentType: .commaSeparatedText,
+        .fileExporter(isPresented: $exportando, document: Libros.ingresos(emitidas), contentType: .commaSeparatedText,
                       defaultFilename: String(localized: "Ingresos \(periodo.nombre).csv")) { _ in }
         .importacionDeFacturas(isPresented: $importando)
     }
@@ -143,20 +143,6 @@ struct IngresosView: View {
         try? contexto.save()
     }
 
-    private func csv(_ lista: [Ingreso]) -> DocumentoCSV {
-        var filas = [["Fecha expedición", "Número", "NIF destinatario", "Destinatario", "Concepto",
-                      "Base imponible", "Tipo IVA", "Cuota IVA", "Tipo retención", "Retención", "Total",
-                      "Cobrada", "Fecha cobro"]]
-        for i in lista.sorted(by: { $0.fecha < $1.fecha }) {
-            filas.append([
-                i.fecha.corta, i.numero, i.cliente?.nif ?? "", i.cliente?.nombre ?? "", i.concepto,
-                DocumentoCSV.importe(i.base), DocumentoCSV.importe(i.tipoIVA), DocumentoCSV.importe(i.cuotaIVA),
-                DocumentoCSV.importe(i.tipoRetencion), DocumentoCSV.importe(i.retencion), DocumentoCSV.importe(i.total),
-                i.cobrada ? "Sí" : "No", i.fechaCobro?.corta ?? "",
-            ])
-        }
-        return DocumentoCSV(filas: filas)
-    }
 }
 
 enum HojaIngreso: Identifiable {

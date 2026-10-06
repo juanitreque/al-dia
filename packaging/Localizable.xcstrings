@@ -86,6 +86,16 @@
         }
       }
     },
+    "%lld gasto(s) sin documento adjunto: aparecen en el resumen para que el gestor lo sepa.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld expense(s) without an attached document: listed in the summary so your accountant knows."
+          }
+        }
+      }
+    },
     "%lldT": {
       "localizations": {
         "en": {
@@ -391,6 +401,16 @@
     },
     "Al Día": {
       "shouldTranslate": false
+    },
+    "Al Día %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al Día %@"
+          }
+        }
+      }
     },
     "Amazon, Movistar…": {
       "localizations": {
@@ -1110,6 +1130,16 @@
         }
       }
     },
+    "Documentación %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Documents %@"
+          }
+        }
+      }
+    },
     "Documento": {
       "localizations": {
         "en": {
@@ -1269,6 +1299,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Email"
+          }
+        }
+      }
+    },
+    "Email del gestor": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accountant's email"
           }
         }
       }
@@ -1454,6 +1494,16 @@
         }
       }
     },
+    "Factura %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice %@"
+          }
+        }
+      }
+    },
     "Factura %@ emitida y guardada.": {
       "localizations": {
         "en": {
@@ -1516,6 +1566,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Invoices"
+          }
+        }
+      }
+    },
+    "Facturas emitidas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issued invoices"
           }
         }
       }
@@ -1630,12 +1690,42 @@
         }
       }
     },
+    "GASTOS SIN DOCUMENTO ADJUNTO: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EXPENSES WITHOUT DOCUMENT: %lld"
+          }
+        }
+      }
+    },
+    "GASTOS: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EXPENSES: %lld"
+          }
+        }
+      }
+    },
     "Gasto IRPF": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Income tax expense"
+          }
+        }
+      }
+    },
+    "Gasto deducible IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductible expense (income tax)"
           }
         }
       }
@@ -1700,6 +1790,26 @@
         }
       }
     },
+    "Generado con Al Día el %@. Cifras orientativas: revisar antes de presentar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generated with Al Día on %@. Indicative figures: review before filing."
+          }
+        }
+      }
+    },
+    "Gestoría": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accountant"
+          }
+        }
+      }
+    },
     "Gestoría Ejemplo": {
       "localizations": {
         "en": {
@@ -1736,6 +1846,32 @@
           "stringUnit": {
             "state": "translated",
             "value": "Save PDF…"
+          }
+        }
+      }
+    },
+    "Guardar ZIP…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save ZIP…"
+          }
+        }
+      }
+    },
+    "Hola:\n\nTe envío la documentación del %@: %lld facturas emitidas y %lld gastos, con el resumen del 303 y el 130.\n\nUn saludo,\n%@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hello,\n\nPlease find attached the documents for %@: %lld issued invoices and %lld expenses, with the Form 303 and 130 summary.\n\nBest regards,\n%@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Hola:\n\nTe envío la documentación del %1$@: %2$lld facturas emitidas y %3$lld gastos, con el resumen del 303 y el 130.\n\nUn saludo,\n%4$@"
           }
         }
       }
@@ -1792,6 +1928,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "IBAN for payments"
+          }
+        }
+      }
+    },
+    "INGRESOS (facturas emitidas): %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "INCOME (issued invoices): %lld"
           }
         }
       }
@@ -1972,6 +2118,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Print…"
+          }
+        }
+      }
+    },
+    "Incluir los PDF de facturas, tickets y justificantes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include PDFs of invoices, receipts and filing receipts"
+          }
+        }
+      }
+    },
+    "Incluye un resumen con el 303 y el 130, los libros de ingresos y gastos en CSV y, si lo marcas, todos los documentos.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Includes a summary with Forms 303 and 130, the income and expense ledgers as CSV and, if ticked, every document."
           }
         }
       }
@@ -2198,6 +2364,36 @@
         }
       }
     },
+    "MODELO 130 · Pago fraccionado IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FORM 130 · Income tax prepayment"
+          }
+        }
+      }
+    },
+    "MODELO 303 · IVA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FORM 303 · VAT"
+          }
+        }
+      }
+    },
+    "MODELOS PRESENTADOS": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FILED FORMS"
+          }
+        }
+      }
+    },
     "Mantenimiento web mensual": {
       "localizations": {
         "en": {
@@ -2328,6 +2524,16 @@
         }
       }
     },
+    "Modelos presentados": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filed forms"
+          }
+        }
+      }
+    },
     "Mostrar en Finder": {
       "localizations": {
         "en": {
@@ -2408,6 +2614,16 @@
         }
       }
     },
+    "No hay facturas emitidas ni gastos en este trimestre.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No issued invoices or expenses in this quarter."
+          }
+        }
+      }
+    },
     "No reconocida": {
       "localizations": {
         "en": {
@@ -2436,6 +2652,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Client NIF not found"
+          }
+        }
+      }
+    },
+    "No se pudo crear el paquete: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The package could not be created: %@"
           }
         }
       }
@@ -2656,6 +2882,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Example Stationery"
+          }
+        }
+      }
+    },
+    "Paquete para el gestor · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accountant package · %@"
+          }
+        }
+      }
+    },
+    "Paquete para el gestor…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accountant package…"
           }
         }
       }
@@ -2916,6 +3162,22 @@
         }
       }
     },
+    "RESUMEN %@ (%@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SUMMARY %@ (%@)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "RESUMEN %1$@ (%2$@)"
+          }
+        }
+      }
+    },
     "Registra aquí cada modelo que presentes, con su justificante.": {
       "localizations": {
         "en": {
@@ -3006,12 +3268,32 @@
         }
       }
     },
+    "Resumen %@.txt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summary %@.txt"
+          }
+        }
+      }
+    },
     "Retenciones": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Withholdings"
+          }
+        }
+      }
+    },
+    "Retenciones IRPF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income tax withheld"
           }
         }
       }
@@ -3366,6 +3648,16 @@
         }
       }
     },
+    "Total facturado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total invoiced"
+          }
+        }
+      }
+    },
     "Total pagado": {
       "localizations": {
         "en": {
@@ -3576,6 +3868,16 @@
         }
       }
     },
+    "Zip con resumen, libros y documentos del trimestre, listo para enviar por correo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zip with the quarter's summary, ledgers and documents, ready to email"
+          }
+        }
+      }
+    },
     "a compensar": {
       "localizations": {
         "en": {
@@ -3605,6 +3907,9 @@
           }
         }
       }
+    },
+    "gestoria@ejemplo.es": {
+      "shouldTranslate": false
     },
     "todo cobrado": {
       "localizations": {

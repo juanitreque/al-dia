@@ -126,7 +126,7 @@ struct GastosView: View {
                 aEliminar = []
             }
         }
-        .fileExporter(isPresented: $exportando, document: csv(lista), contentType: .commaSeparatedText,
+        .fileExporter(isPresented: $exportando, document: Libros.gastos(lista), contentType: .commaSeparatedText,
                       defaultFilename: String(localized: "Gastos \(periodo.nombre).csv")) { _ in }
     }
 
@@ -147,21 +147,6 @@ struct GastosView: View {
         hoja = .importado(cola.removeFirst())
     }
 
-    private func csv(_ lista: [Gasto]) -> DocumentoCSV {
-        var filas = [["Fecha", "Nº factura", "NIF proveedor", "Proveedor", "Concepto", "Categoría",
-                      "Base imponible", "Tipo IVA", "Cuota IVA", "% deducible", "IVA deducible",
-                      "Gasto IRPF", "Factura completa", "Bien de inversión"]]
-        for g in lista.sorted(by: { $0.fecha < $1.fecha }) {
-            let d = g.datos
-            filas.append([
-                g.fecha.corta, g.numeroFactura, g.nifProveedor, g.proveedor, g.concepto, g.categoria.rawValue,
-                DocumentoCSV.importe(g.base), DocumentoCSV.importe(g.tipoIVA), DocumentoCSV.importe(g.cuotaIVA),
-                DocumentoCSV.importe(g.porcentajeDeducibleIVA), DocumentoCSV.importe(d.ivaDeducible),
-                DocumentoCSV.importe(d.gastoIRPF), g.facturaCompleta ? "Sí" : "No", g.bienInversion ? "Sí" : "No",
-            ])
-        }
-        return DocumentoCSV(filas: filas)
-    }
 }
 
 enum HojaGasto: Identifiable {
