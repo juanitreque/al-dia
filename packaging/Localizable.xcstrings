@@ -402,16 +402,6 @@
     "Al Día": {
       "shouldTranslate": false
     },
-    "Al Día %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Al Día %@"
-          }
-        }
-      }
-    },
     "Amazon, Movistar…": {
       "localizations": {
         "en": {
@@ -1790,16 +1780,6 @@
         }
       }
     },
-    "Generado con Al Día el %@. Cifras orientativas: revisar antes de presentar.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Generated with Al Día on %@. Indicative figures: review before filing."
-          }
-        }
-      }
-    },
     "Gestoría": {
       "localizations": {
         "en": {
@@ -3028,6 +3008,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prepare an invoice with + or import the PDFs of your past invoices."
+          }
+        }
+      }
+    },
+    "Preparado el %@. Cifras orientativas: revisar antes de presentar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepared on %@. Indicative figures: review before filing."
           }
         }
       }

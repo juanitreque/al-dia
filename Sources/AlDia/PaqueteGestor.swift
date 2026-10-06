@@ -82,7 +82,13 @@ struct PaqueteGestor {
         self.modelos = modelos
     }
 
-    var nombre: String { String(localized: "Al Día \(trimestre.nombre)") }
+    /// "Nombre Apellido - 3T 2026": el gestor reconoce de quién es y de qué periodo.
+    var nombre: String {
+        let autonomo = Ajustes.texto(Ajustes.nombre)
+        return autonomo.isEmpty
+            ? String(localized: "Documentación \(trimestre.nombre)")
+            : "\(autonomo) - \(trimestre.nombre)"
+    }
 
     var presentados: [ModeloPresentado] {
         modelos.filter { $0.ejercicio == trimestre.ejercicio && $0.periodo == trimestre.periodo }
@@ -173,7 +179,7 @@ struct PaqueteGestor {
 
         linea(String(localized: "RESUMEN \(trimestre.nombre) (\(rango))"))
         linea("\(emisor.nombre) · NIF \(emisor.nif)")
-        linea(String(localized: "Generado con Al Día el \(Date.now.corta). Cifras orientativas: revisar antes de presentar."))
+        linea(String(localized: "Preparado el \(Date.now.corta). Cifras orientativas: revisar antes de presentar."))
         linea()
         linea(String(localized: "INGRESOS (facturas emitidas): \(ingresos.count)"))
         cifra(String(localized: "Base imponible"), ingresos.suma(\.base))
@@ -348,7 +354,9 @@ struct PaqueteGestorView: View {
         Un saludo,
         \(Ajustes.texto(Ajustes.nombre))
         """)
-        Correo.enviar(adjunto: zip, para: emailGestor, asunto: String(localized: "Documentación \(trimestre.nombre)"), cuerpo: cuerpo)
+        let autonomo = Ajustes.texto(Ajustes.nombre)
+        let asunto = String(localized: "Documentación \(trimestre.nombre)") + (autonomo.isEmpty ? "" : " · \(autonomo)")
+        Correo.enviar(adjunto: zip, para: emailGestor, asunto: asunto, cuerpo: cuerpo)
     }
 }
 
