@@ -47,7 +47,9 @@ Antes de la primera factura, exporta tus clientes y servicios desde Al Día e im
 
 ## Instalación
 
-Todavía no hay una descarga notarizada; se compila desde el código con un solo comando:
+**Descarga:** baja el último `.zip` de [Releases](https://github.com/juanitreque/al-dia/releases), descomprímelo y arrastra **Al Día.app** a Aplicaciones. No está notarizada, así que la primera vez abre **Ajustes del Sistema → Privacidad y seguridad → Abrir igualmente**.
+
+**O compílala desde el código** con un solo comando:
 
 ```bash
 git clone https://github.com/juanitreque/al-dia.git

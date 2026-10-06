@@ -47,7 +47,9 @@ Before your first invoice, export your clients and services from Al Día and imp
 
 ## Install
 
-There is no notarised download yet; build it from source (one command):
+**Download:** get the latest `.zip` from [Releases](https://github.com/juanitreque/al-dia/releases), unzip it and drag **Al Día.app** to Applications. It is not notarised, so the first time open **System Settings → Privacy & Security → Open Anyway**.
+
+**Or build it from source** (one command):
 
 ```bash
 git clone https://github.com/juanitreque/al-dia.git
