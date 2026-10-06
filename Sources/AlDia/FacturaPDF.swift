@@ -215,13 +215,6 @@ enum FacturaPDF {
         return datos as Data
     }
 
-    /// Abre en Vista Previa cómo quedará un borrador, con la marca de agua «BORRADOR».
-    @MainActor
-    static func vistaPrevia(_ ingreso: Ingreso) {
-        let datos = generar(ingreso, borrador: true)
-        Adjuntos.abrir(datos, nombre: String(localized: "Borrador \(ingreso.numero).pdf"))
-    }
-
     /// Diálogo de impresión del sistema para un PDF.
     @MainActor
     static func imprimir(_ datos: Data) {
@@ -252,10 +245,11 @@ enum FacturaPDF {
 
     /// Abre un correo nuevo en la app de correo con el PDF adjunto y el cliente como destinatario.
     @MainActor
-    static func enviarPorCorreo(_ ingreso: Ingreso) {
-        guard let datos = ingreso.adjunto, !datos.isEmpty else { return }
+    /// - `datos`: el PDF a adjuntar; por defecto, el documento adjunto de la factura.
+    static func enviarPorCorreo(_ ingreso: Ingreso, datos: Data? = nil) {
+        guard let datos = datos ?? ingreso.adjunto, !datos.isEmpty else { return }
         let carpeta = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
-        let url = carpeta.appendingPathComponent(ingreso.adjuntoNombre ?? nombreArchivo(ingreso))
+        let url = carpeta.appendingPathComponent(nombreArchivo(ingreso))
         do {
             try FileManager.default.createDirectory(at: carpeta, withIntermediateDirectories: true)
             try datos.write(to: url)
@@ -409,5 +403,74 @@ struct EmitirConAlDiaView: View {
     private func abrir() {
         if let copia { NSWorkspace.shared.open(copia) }
         else if let datos = ingreso.adjunto, let nombre = ingreso.adjuntoNombre { Adjuntos.abrir(datos, nombre: nombre) }
+    }
+}
+
+
+// MARK: - Ver la factura
+
+/// Visor de PDF de PDFKit.
+private struct VisorPDF: NSViewRepresentable {
+    let datos: Data
+
+    func makeNSView(context: Context) -> PDFView {
+        let vista = PDFView()
+        vista.autoScales = true
+        vista.displayMode = .singlePageContinuous
+        vista.backgroundColor = .windowBackgroundColor
+        vista.document = PDFDocument(data: datos)
+        return vista
+    }
+
+    func updateNSView(_ vista: PDFView, context: Context) {
+        if vista.document?.dataRepresentation() != datos { vista.document = PDFDocument(data: datos) }
+    }
+}
+
+/// La factura tal como la genera Al Día, con guardar, imprimir y enviar.
+/// Los borradores llevan la marca de agua «BORRADOR» y no se pueden enviar.
+struct VistaFacturaView: View {
+    @Environment(\.dismiss) private var dismiss
+    let ingreso: Ingreso
+    @State private var datos = Data()
+
+    var body: some View {
+        VStack(spacing: 0) {
+            if datos.isEmpty {
+                ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                VisorPDF(datos: datos)
+            }
+            Divider()
+            HStack {
+                if ingreso.esBorrador {
+                    Label("Borrador: emítela para poder enviarla.", systemImage: "info.circle")
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Button("Cerrar") { dismiss() }.keyboardShortcut(.cancelAction)
+                Button("Guardar PDF…") { guardar() }
+                Button("Imprimir…") { FacturaPDF.imprimir(datos) }
+                    .keyboardShortcut("p")
+                Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(ingreso, datos: datos) }
+                    .keyboardShortcut(.defaultAction)
+                    .disabled(ingreso.esBorrador)
+            }
+            .disabled(datos.isEmpty)
+            .padding()
+        }
+        .frame(width: 600, height: 640)
+        .onAppear { datos = FacturaPDF.generar(ingreso, borrador: ingreso.esBorrador) }
+    }
+
+    private func guardar() {
+        let panel = NSSavePanel()
+        panel.allowedContentTypes = [.pdf]
+        panel.nameFieldStringValue = ingreso.esBorrador
+            ? String(localized: "Borrador \(ingreso.numero).pdf")
+            : FacturaPDF.nombreArchivo(ingreso)
+        if panel.runModal() == .OK, let url = panel.url {
+            do { try datos.write(to: url, options: .atomic) } catch { NSSound.beep() }
+        }
     }
 }

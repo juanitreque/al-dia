@@ -644,6 +644,16 @@
         }
       }
     },
+    "Borrador: emítela para poder enviarla.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft: issue it to be able to send it."
+          }
+        }
+      }
+    },
     "Borradores": {
       "localizations": {
         "en": {
@@ -1716,6 +1726,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Save"
+          }
+        }
+      }
+    },
+    "Guardar PDF…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save PDF…"
           }
         }
       }
@@ -3506,12 +3526,22 @@
         }
       }
     },
-    "Ver PDF": {
+    "Ver documento adjunto": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "View PDF"
+            "value": "View attached document"
+          }
+        }
+      }
+    },
+    "Ver factura…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View invoice…"
           }
         }
       }
@@ -3522,16 +3552,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "View"
-          }
-        }
-      }
-    },
-    "Vista previa del PDF": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PDF preview"
           }
         }
       }

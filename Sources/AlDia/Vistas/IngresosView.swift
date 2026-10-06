@@ -60,12 +60,9 @@ struct IngresosView: View {
                         Button(i.cobrada ? LocalizedStringKey("Marcar como pendiente") : LocalizedStringKey("Marcar como cobrada")) { alternarCobro(i) }
                     }
                     Divider()
-                    if i.esBorrador {
-                        Button("Vista previa del PDF") { FacturaPDF.vistaPrevia(i) }
-                    } else if let adjunto = i.adjunto, !adjunto.isEmpty, let nombre = i.adjuntoNombre {
-                        Button("Ver PDF") { Adjuntos.abrir(adjunto, nombre: nombre) }
-                        Button("Imprimir…") { FacturaPDF.imprimir(adjunto) }
-                        Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(i) }
+                    Button("Ver factura…") { hoja = .ver(i) }
+                    if let adjunto = i.adjunto, !adjunto.isEmpty, let nombre = i.adjuntoNombre {
+                        Button("Ver documento adjunto") { Adjuntos.abrir(adjunto, nombre: nombre) }
                     }
                     Divider()
                 }
@@ -77,7 +74,7 @@ struct IngresosView: View {
                 if i.esBorrador {
                     hoja = VeriFactu.obliga(en: i.fecha) ? .emitir(i) : .emitirPropia(i)
                 } else {
-                    hoja = .editar(i)
+                    hoja = .ver(i)
                 }
             }
             .overlay {
@@ -121,6 +118,7 @@ struct IngresosView: View {
             case .duplicar(let i): IngresoEditor(plantilla: i)
             case .emitir(let i): FichaEmisionView(ingreso: i)
             case .emitirPropia(let i): EmitirConAlDiaView(ingreso: i)
+            case .ver(let i): VistaFacturaView(ingreso: i)
             }
         }
         .confirmationDialog("¿Eliminar \(aEliminar.count) factura(s)?", isPresented: .init(
@@ -167,6 +165,7 @@ enum HojaIngreso: Identifiable {
     case duplicar(Ingreso)
     case emitir(Ingreso)
     case emitirPropia(Ingreso)
+    case ver(Ingreso)
 
     var id: String {
         switch self {
@@ -175,6 +174,7 @@ enum HojaIngreso: Identifiable {
         case .duplicar(let i): "duplicar-\(i.id.hashValue)"
         case .emitir(let i): "emitir-\(i.id.hashValue)"
         case .emitirPropia(let i): "emitir-propia-\(i.id.hashValue)"
+        case .ver(let i): "ver-\(i.id.hashValue)"
         }
     }
 }
