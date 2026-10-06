@@ -29,6 +29,8 @@
 	<string>public.app-category.finance</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>15.0</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Al Día usa Mail para preparar los correos con tus facturas y el paquete para el gestor.</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>

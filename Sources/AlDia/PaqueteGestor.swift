@@ -403,6 +403,12 @@ enum Correo {
     static func enviar(adjunto: URL, para: String, asunto: String, cuerpo: String) -> EnvioCorreo {
         let destinatario = para.trimmingCharacters(in: .whitespaces)
         func envio(_ r: EnvioCorreo.Resultado) -> EnvioCorreo { EnvioCorreo(resultado: r, para: destinatario, asunto: asunto) }
+
+        // Preferencia de Ajustes: Mail aunque no sea la app de correo predeterminada
+        if UserDefaults.standard.string(forKey: Ajustes.appCorreo) == "mail",
+           conMail(adjunto: adjunto, para: destinatario, asunto: asunto, cuerpo: cuerpo) {
+            return envio(.completo)
+        }
         let app = NSWorkspace.shared.urlForApplication(toOpen: URL(string: "mailto:")!)
         let esMail = app.flatMap { Bundle(url: $0)?.bundleIdentifier } == "com.apple.mail"
 
@@ -435,5 +441,35 @@ enum Correo {
         Portapapeles.copiar(cuerpo)
         NSWorkspace.shared.open([adjunto], withApplicationAt: app, configuration: NSWorkspace.OpenConfiguration())
         return envio(.textoEnPortapapeles)
+    }
+
+    /// Crea en Mail un correo con destinatario, asunto, texto y adjunto (AppleScript).
+    /// La primera vez macOS pide permiso para que Al Día controle Mail. Devuelve false si falla.
+    @MainActor
+    private static func conMail(adjunto: URL, para: String, asunto: String, cuerpo: String) -> Bool {
+        func literal(_ texto: String) -> String {
+            "\"" + texto.replacingOccurrences(of: "\\", with: "\\\\")
+                .replacingOccurrences(of: "\"", with: "\\\"")
+                .replacingOccurrences(of: "\n", with: "\\n") + "\""
+        }
+        let destinatario = para.isEmpty ? "" : """
+                make new to recipient at end of to recipients with properties {address:\(literal(para))}
+        """
+        let codigo = """
+        tell application "Mail"
+            set mensaje to make new outgoing message with properties {subject:\(literal(asunto)), content:\(literal(cuerpo + "\n\n")), visible:true}
+            tell mensaje
+        \(destinatario)
+                tell content
+                    make new attachment with properties {file name:(POSIX file \(literal(adjunto.path)) as alias)} at after the last paragraph
+                end tell
+            end tell
+            activate
+        end tell
+        """
+        var error: NSDictionary?
+        NSAppleScript(source: codigo)?.executeAndReturnError(&error)
+        if let error { NSLog("Mail no pudo crear el correo: \(error)") }
+        return error == nil
     }
 }

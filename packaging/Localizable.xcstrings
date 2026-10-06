@@ -453,6 +453,16 @@
         }
       }
     },
+    "App de correo predeterminada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default mail app"
+          }
+        }
+      }
+    },
     "Archivo": {
       "localizations": {
         "en": {
@@ -860,6 +870,16 @@
         }
       }
     },
+    "Con Mail, el correo se prepara completo: destinatario, asunto, texto y adjunto. Necesita tu cuenta configurada en Mail; la primera vez macOS te pedirá permiso para que Al Día lo controle.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With Mail, the message is prepared in full: recipient, subject, text and attachment. Your account must be set up in Mail; the first time macOS will ask for permission for Al Día to control it."
+          }
+        }
+      }
+    },
     "Con el 4T: modelo 390 (resumen anual de IVA)": {
       "localizations": {
         "en": {
@@ -906,6 +926,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "OK"
+          }
+        }
+      }
+    },
+    "Correo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
           }
         }
       }
@@ -1399,6 +1429,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Issue and create PDF"
+          }
+        }
+      }
+    },
+    "Enviar correos con": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send email with"
           }
         }
       }
@@ -2390,6 +2430,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "FILED FORMS"
+          }
+        }
+      }
+    },
+    "Mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail"
           }
         }
       }

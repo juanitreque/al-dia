@@ -15,6 +15,7 @@ struct AjustesView: View {
     @AppStorage(Ajustes.iban) private var iban = ""
     @AppStorage(Ajustes.pieFactura) private var pie = ""
     @AppStorage(Ajustes.emailGestor) private var emailGestor = ""
+    @AppStorage(Ajustes.appCorreo) private var appCorreo = "predeterminada"
     @AppStorage(Ajustes.ivaDefecto) private var iva = 21
     @AppStorage(Ajustes.retencionDefecto) private var retencion = 15
     @AppStorage(Ajustes.formatoNumeracion) private var formato = "anual"
@@ -62,6 +63,17 @@ struct AjustesView: View {
             }
             Section("Gestoría") {
                 TextField("Email del gestor", text: $emailGestor, prompt: Text("gestoria@ejemplo.es"))
+            }
+            Section {
+                Picker("Enviar correos con", selection: $appCorreo) {
+                    Text("App de correo predeterminada").tag("predeterminada")
+                    Text("Mail").tag("mail")
+                }
+            } header: {
+                Text("Correo")
+            } footer: {
+                Text("Con Mail, el correo se prepara completo: destinatario, asunto, texto y adjunto. Necesita tu cuenta configurada en Mail; la primera vez macOS te pedirá permiso para que Al Día lo controle.")
+                    .foregroundStyle(.secondary)
             }
             Section {
                 Picker("Formato", selection: $formato) {

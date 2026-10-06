@@ -18,6 +18,8 @@ enum Ajustes {
     static let iban = "emisor.iban"
     static let pieFactura = "factura.pie"
     static let emailGestor = "gestor.email"
+    /// "predeterminada" (la app de correo del sistema) o "mail" (Apple Mail por AppleScript).
+    static let appCorreo = "correo.app"
 
     static func texto(_ clave: String) -> String {
         (UserDefaults.standard.string(forKey: clave) ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
