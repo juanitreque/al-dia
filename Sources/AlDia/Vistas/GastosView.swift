@@ -134,8 +134,9 @@ struct GastosView: View {
     private func leer(_ urls: [URL]) async {
         leyendo = true
         let miNIF = UserDefaults.standard.string(forKey: Ajustes.nif) ?? ""
+        let miNombre = UserDefaults.standard.string(forKey: Ajustes.nombre) ?? ""
         for url in urls {
-            if let importado = await GastoImportado.leer(url, miNIF: miNIF) { cola.append(importado) }
+            if let importado = await GastoImportado.leer(url, miNIF: miNIF, miNombre: miNombre) { cola.append(importado) }
         }
         leyendo = false
         if hoja == nil { mostrarSiguienteImportado() }
@@ -193,13 +194,13 @@ struct GastoImportado: Identifiable {
         return tipo.conforms(to: .pdf) || tipo.conforms(to: .image)
     }
 
-    static func leer(_ url: URL, miNIF: String) async -> GastoImportado? {
+    static func leer(_ url: URL, miNIF: String, miNombre: String) async -> GastoImportado? {
         let acceso = url.startAccessingSecurityScopedResource()
         defer { if acceso { url.stopAccessingSecurityScopedResource() } }
         guard let datos = try? Data(contentsOf: url) else { return nil }
         let esPDF = UTType(filenameExtension: url.pathExtension)?.conforms(to: .pdf) ?? false
         let texto = await LecturaDocumentos.texto(de: datos, esPDF: esPDF)
-        return GastoImportado(leido: LectorTicket.analizar(texto, miNIF: miNIF), datos: datos,
+        return GastoImportado(leido: LectorTicket.analizar(texto, miNIF: miNIF, miNombre: miNombre), datos: datos,
                               nombre: url.lastPathComponent, conMiNIF: !miNIF.isEmpty)
     }
 }
@@ -225,6 +226,7 @@ struct GastoEditor: View {
     @State private var adjunto: Data?
     @State private var adjuntoNombre: String?
     private var importado = false
+    private var proveedorExtranjero = false
 
     init(gasto: Gasto? = nil, plantilla: Gasto? = nil) {
         self.gasto = gasto
@@ -252,6 +254,7 @@ struct GastoEditor: View {
         self.init()
         let l = i.leido
         importado = true
+        proveedorExtranjero = l.proveedorExtranjero
         _fecha = State(initialValue: l.fecha ?? .now)
         _proveedor = State(initialValue: l.proveedor)
         _nifProveedor = State(initialValue: l.nifProveedor)
@@ -278,6 +281,11 @@ struct GastoEditor: View {
                         Label("Datos leídos del documento: revísalos antes de guardar, sobre todo importes y fecha.",
                               systemImage: "doc.text.viewfinder")
                             .foregroundStyle(.secondary)
+                        if proveedorExtranjero {
+                            Label("Proveedor de otro país de la UE: aunque la factura lleve IVA español, puede no ser deducible como el de un proveedor nacional (inversión del sujeto pasivo). Consúltalo con tu gestor.",
+                                  systemImage: "exclamationmark.triangle")
+                                .foregroundStyle(.orange)
+                        }
                     }
                 }
                 Section("Compra") {

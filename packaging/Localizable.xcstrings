@@ -2477,6 +2477,16 @@
         }
       }
     },
+    "Proveedor de otro país de la UE: aunque la factura lleve IVA español, puede no ser deducible como el de un proveedor nacional (inversión del sujeto pasivo). Consúltalo con tu gestor.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supplier from another EU country: even if the invoice shows Spanish VAT, it may not be deductible like a domestic supplier's (reverse charge). Check with your accountant."
+          }
+        }
+      }
+    },
     "Proveedor de software": {
       "localizations": {
         "en": {
