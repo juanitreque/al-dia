@@ -513,6 +513,16 @@
         }
       }
     },
+    "BORRADOR": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DRAFT"
+          }
+        }
+      }
+    },
     "Base": {
       "localizations": {
         "en": {
@@ -620,6 +630,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Draft"
+          }
+        }
+      }
+    },
+    "Borrador %@.pdf": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft %@.pdf"
           }
         }
       }
@@ -1922,6 +1942,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Amounts"
+          }
+        }
+      }
+    },
+    "Imprimir…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print…"
           }
         }
       }
@@ -3476,12 +3506,32 @@
         }
       }
     },
+    "Ver PDF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View PDF"
+          }
+        }
+      }
+    },
     "Vista": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "View"
+          }
+        }
+      }
+    },
+    "Vista previa del PDF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF preview"
           }
         }
       }

@@ -1,4 +1,5 @@
 import AppKit
+import PDFKit
 import SwiftData
 import SwiftUI
 import AlDiaCore
@@ -63,6 +64,8 @@ func datosQueFaltan(_ ingreso: Ingreso, emisor: Emisor) -> [String] {
 struct PlantillaFactura: View {
     let ingreso: Ingreso
     let emisor: Emisor
+    /// Marca de agua «BORRADOR» para la vista previa de una factura aún no emitida.
+    var borrador = false
 
     private let gris = Color(white: 0.4)
     private let linea = Color(white: 0.85)
@@ -152,6 +155,14 @@ struct PlantillaFactura: View {
         .padding(48)
         .frame(width: 595, height: 842, alignment: .topLeading)
         .background(Color.white)
+        .overlay {
+            if borrador {
+                Text("BORRADOR")
+                    .font(.system(size: 110, weight: .heavy))
+                    .foregroundStyle(Color.red.opacity(0.12))
+                    .rotationEffect(.degrees(-35))
+            }
+        }
         .environment(\.colorScheme, .light)
     }
 
@@ -189,8 +200,8 @@ struct PlantillaFactura: View {
 enum FacturaPDF {
     /// PDF vectorial (texto seleccionable) de la factura.
     @MainActor
-    static func generar(_ ingreso: Ingreso, emisor: Emisor = Emisor()) -> Data {
-        let renderer = ImageRenderer(content: PlantillaFactura(ingreso: ingreso, emisor: emisor))
+    static func generar(_ ingreso: Ingreso, emisor: Emisor = Emisor(), borrador: Bool = false) -> Data {
+        let renderer = ImageRenderer(content: PlantillaFactura(ingreso: ingreso, emisor: emisor, borrador: borrador))
         let datos = NSMutableData()
         renderer.render { tamaño, pintar in
             var caja = CGRect(origin: .zero, size: tamaño)
@@ -202,6 +213,22 @@ enum FacturaPDF {
             contexto.closePDF()
         }
         return datos as Data
+    }
+
+    /// Abre en Vista Previa cómo quedará un borrador, con la marca de agua «BORRADOR».
+    @MainActor
+    static func vistaPrevia(_ ingreso: Ingreso) {
+        let datos = generar(ingreso, borrador: true)
+        Adjuntos.abrir(datos, nombre: String(localized: "Borrador \(ingreso.numero).pdf"))
+    }
+
+    /// Diálogo de impresión del sistema para un PDF.
+    @MainActor
+    static func imprimir(_ datos: Data) {
+        guard let documento = PDFDocument(data: datos),
+              let operacion = documento.printOperation(for: NSPrintInfo.shared, scalingMode: .pageScaleToFit, autoRotate: true)
+        else { NSSound.beep(); return }
+        operacion.run()
     }
 
     static func nombreArchivo(_ ingreso: Ingreso) -> String {
@@ -298,6 +325,7 @@ struct EmitirConAlDiaView: View {
                             .font(.headline)
                         HStack {
                             Button("Abrir PDF") { abrir() }
+                            Button("Imprimir…") { if let datos = ingreso.adjunto { FacturaPDF.imprimir(datos) } }
                             Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(ingreso) }
                                 .keyboardShortcut(.defaultAction)
                             if let copia {

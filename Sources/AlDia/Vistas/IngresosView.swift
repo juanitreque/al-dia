@@ -59,11 +59,13 @@ struct IngresosView: View {
                     if !i.esBorrador {
                         Button(i.cobrada ? LocalizedStringKey("Marcar como pendiente") : LocalizedStringKey("Marcar como cobrada")) { alternarCobro(i) }
                     }
-                    if let adjunto = i.adjunto, let nombre = i.adjuntoNombre {
-                        Button("Abrir documento") { Adjuntos.abrir(adjunto, nombre: nombre) }
-                        if !i.esBorrador, !adjunto.isEmpty {
-                            Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(i) }
-                        }
+                    Divider()
+                    if i.esBorrador {
+                        Button("Vista previa del PDF") { FacturaPDF.vistaPrevia(i) }
+                    } else if let adjunto = i.adjunto, !adjunto.isEmpty, let nombre = i.adjuntoNombre {
+                        Button("Ver PDF") { Adjuntos.abrir(adjunto, nombre: nombre) }
+                        Button("Imprimir…") { FacturaPDF.imprimir(adjunto) }
+                        Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(i) }
                     }
                     Divider()
                 }
