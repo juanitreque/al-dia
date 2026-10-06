@@ -143,11 +143,10 @@ struct PlantillaFactura: View {
 
             Spacer(minLength: 0)
 
+            // El pie se dibuja justificado al generar el PDF (SwiftUI no justifica texto);
+            // aquí solo se le reserva el sitio para que nada se le monte encima.
             if !emisor.pieFinal.isEmpty {
-                Text(verbatim: emisor.pieFinal)
-                    .font(.system(size: 7.5))
-                    .foregroundStyle(gris)
-                    .fixedSize(horizontal: false, vertical: true)
+                Color.clear.frame(height: PiePDF.altura(emisor.pieFinal))
             }
         }
         .font(.system(size: 10.5))
@@ -195,6 +194,46 @@ struct PlantillaFactura: View {
     }
 }
 
+// MARK: - Pie justificado
+
+/// Pie de la factura dibujado con el motor de texto del sistema, que sí justifica
+/// (alineado a ambos márgenes, la última línea a la izquierda).
+enum PiePDF {
+    static let margen: CGFloat = 48
+    static let ancho: CGFloat = 595 - 2 * margen
+
+    private static var atributos: [NSAttributedString.Key: Any] {
+        let parrafo = NSMutableParagraphStyle()
+        parrafo.alignment = .justified
+        parrafo.hyphenationFactor = 0.6
+        parrafo.lineSpacing = 1
+        return [
+            .font: NSFont.systemFont(ofSize: 7.5),
+            .foregroundColor: NSColor(white: 0.4, alpha: 1),
+            .paragraphStyle: parrafo,
+        ]
+    }
+
+    static func altura(_ texto: String) -> CGFloat {
+        guard !texto.isEmpty else { return 0 }
+        let caja = NSAttributedString(string: texto, attributes: atributos)
+            .boundingRect(with: CGSize(width: ancho, height: .greatestFiniteMagnitude),
+                          options: [.usesLineFragmentOrigin, .usesFontLeading])
+        return ceil(caja.height)
+    }
+
+    /// Dibuja el pie pegado al margen inferior de una página A4 (origen abajo a la izquierda).
+    static func dibujar(_ texto: String, en contexto: CGContext) {
+        guard !texto.isEmpty else { return }
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(cgContext: contexto, flipped: false)
+        let caja = CGRect(x: margen, y: margen, width: ancho, height: altura(texto))
+        NSAttributedString(string: texto, attributes: atributos)
+            .draw(with: caja, options: [.usesLineFragmentOrigin, .usesFontLeading])
+        NSGraphicsContext.restoreGraphicsState()
+    }
+}
+
 // MARK: - Generación, archivo y correo
 
 enum FacturaPDF {
@@ -208,7 +247,10 @@ enum FacturaPDF {
             guard let consumidor = CGDataConsumer(data: datos),
                   let contexto = CGContext(consumer: consumidor, mediaBox: &caja, nil) else { return }
             contexto.beginPDFPage(nil)
+            contexto.saveGState()
             pintar(contexto)
+            contexto.restoreGState()
+            PiePDF.dibujar(emisor.pieFinal, en: contexto)
             contexto.endPDFPage()
             contexto.closePDF()
         }
