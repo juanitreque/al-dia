@@ -134,7 +134,7 @@ struct PlantillaFactura: View {
             if !emisor.iban.isEmpty {
                 VStack(alignment: .leading, spacing: 3) {
                     Text("FORMA DE PAGO").font(.system(size: 9, weight: .semibold)).foregroundStyle(gris).kerning(0.8)
-                    Text("Transferencia bancaria a \(emisor.iban)")
+                    Text("Transferencia bancaria a \(IBAN.formatear(emisor.iban))")
                 }
             }
 

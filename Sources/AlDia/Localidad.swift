@@ -56,12 +56,15 @@ struct CampoIBAN: View {
     @Binding var iban: String
 
     var body: some View {
-        TextField("IBAN para cobros", text: $iban, prompt: Text("ES00 0000 0000 0000 0000 0000"))
-            .monospaced()
-            .onChange(of: iban) { _, nuevo in
-                let formateado = IBAN.formatear(nuevo)
-                if formateado != nuevo { iban = formateado }
-            }
+        LabeledContent("IBAN para cobros") {
+            TextField("IBAN para cobros", text: $iban, prompt: Text("ES00 0000 0000 0000 0000 0000"))
+                .labelsHidden()
+                .multilineTextAlignment(.trailing)
+                .monospaced()
+        }
+        // También al abrir: un IBAN guardado antes sin espacios se muestra ya agrupado
+        .onAppear { agrupar(iban) }
+        .onChange(of: iban) { _, nuevo in agrupar(nuevo) }
         let limpio = IBAN.normalizar(iban)
         if limpio.count >= 15 {
             if IBAN.esValido(iban) {
@@ -70,5 +73,10 @@ struct CampoIBAN: View {
                 Label("IBAN no válido: revisa las cifras", systemImage: "xmark.circle.fill").foregroundStyle(.red)
             }
         }
+    }
+
+    private func agrupar(_ texto: String) {
+        let formateado = IBAN.formatear(texto)
+        if formateado != texto { iban = formateado }
     }
 }
