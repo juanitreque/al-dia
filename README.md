@@ -11,14 +11,15 @@ Stay up to date with Hacienda: prepare invoices, log deductible expenses and get
 
 Any self-employed person in Spain (*autónomo*) who wants to keep their numbers in order without paying for a full accounting suite. It is designed to stay simple whether you send one invoice a month or thirty, to one client or ten.
 
-Al Día is **not** an invoicing system under VeriFactu. It does not send anything to the tax agency. Official invoices are issued with the **free VERI\*FACTU app from the AEAT** (Agencia Tributaria); Al Día prepares them, keeps track of them and does the tax maths around them.
+Until VeriFactu becomes mandatory, Al Día can **issue your invoices as PDF** and email them to your clients. It is **not** a VeriFactu system and sends nothing to the tax agency: once VeriFactu applies, you prepare the invoice in Al Día and issue it with the **free VERI\*FACTU app from the AEAT**; Al Día keeps track of it and does the tax maths around it.
 
 ## Features
 
 - **Dashboard** with the next filing deadline, which forms are already filed, pending drafts and the quarter/year figures.
 - **Income** — invoices with lines, VAT (IVA) and income tax withholding (IRPF), payment status and the PDF attached.
   - **Drafts** prepared in Al Día don't count for taxes until you mark them as issued.
-  - **Issue sheet**: every field the AEAT app asks for, in the same order, with a copy button.
+  - **Issue with Al Día**: a clean A4 PDF with every legally required detail (issuer and client tax IDs and addresses, lines, VAT, withholding, total, IBAN, custom footer), archived in `~/Documents/Al Día/Facturas/<year>` and ready to **send by email** to the client from your mail app.
+  - **Issue with the AEAT**: every field the AEAT app asks for, in the same order, with a copy button.
   - **PDF import** of invoices you already have (from a spreadsheet template), with a review step.
   - **Yearly numbering** (`2027-001`, `2027-002`…, optional prefix) that restarts every 1 January and is never repeated, however many invoices you issue a month.
 - **Expenses** — deductible VAT and income-tax expense calculated per purchase, with sensible defaults per category (e.g. 50 % VAT for a mixed-use vehicle, no VAT for social security).
@@ -35,7 +36,7 @@ Al Día is **not** an invoicing system under VeriFactu. It does not send anythin
 
 ## How it fits with VeriFactu
 
-From **1 July 2027** every *autónomo* using software to invoice must use a VeriFactu-compliant system ([RD 1007/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840), deadline set by RDL 15/2025). Writing such software makes you its legal "producer", so Al Día deliberately stays on the safe side:
+Every *autónomo* who invoices with software will have to use a VeriFactu-compliant system ([RD 1007/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840)). The legal date is **1 July 2027** (RDL 15/2025); in October 2026 the government announced a further delay to **October 2028**, pending publication. Until then Al Día issues PDF invoices like any spreadsheet would; it warns you when an invoice date falls after the deadline (`VeriFactu.obligatorioDesde` in `FacturaPDF.swift`). Writing VeriFactu software makes you its legal "producer", so from then on Al Día deliberately stays on the safe side:
 
 1. **Prepare** the invoice in Al Día (draft).
 2. **Issue** it in the [free VERI\*FACTU app](https://sede.agenciatributaria.gob.es/Sede/procedimientoini/IZ86.shtml), copying the fields from the issue sheet.

@@ -6,6 +6,14 @@ import AlDiaCore
 struct AjustesView: View {
     @AppStorage(Ajustes.nombre) private var nombre = ""
     @AppStorage(Ajustes.nif) private var nif = ""
+    @AppStorage(Ajustes.direccion) private var direccion = ""
+    @AppStorage(Ajustes.codigoPostal) private var codigoPostal = ""
+    @AppStorage(Ajustes.poblacion) private var poblacion = ""
+    @AppStorage(Ajustes.provincia) private var provincia = ""
+    @AppStorage(Ajustes.email) private var email = ""
+    @AppStorage(Ajustes.telefono) private var telefono = ""
+    @AppStorage(Ajustes.iban) private var iban = ""
+    @AppStorage(Ajustes.pieFactura) private var pie = ""
     @AppStorage(Ajustes.ivaDefecto) private var iva = 21
     @AppStorage(Ajustes.retencionDefecto) private var retencion = 15
     @AppStorage(Ajustes.formatoNumeracion) private var formato = "anual"
@@ -23,6 +31,22 @@ struct AjustesView: View {
             Section("Tus datos") {
                 TextField("Nombre", text: $nombre)
                 TextField("NIF", text: $nif)
+                TextField("Domicilio fiscal", text: $direccion, prompt: Text("C/ Mayor, 1, 2º A"))
+                TextField("Código postal", text: $codigoPostal)
+                TextField("Población", text: $poblacion)
+                TextField("Provincia", text: $provincia)
+                TextField("Email", text: $email)
+                TextField("Teléfono", text: $telefono)
+            }
+            Section {
+                TextField("IBAN para cobros", text: $iban, prompt: Text("ES00 0000 0000 0000 0000 0000"))
+                TextField("Texto al pie (opcional)", text: $pie, axis: .vertical)
+                    .lineLimit(2...5)
+            } header: {
+                Text("Facturas que emite Al Día")
+            } footer: {
+                Text("Aparecen en el PDF de las facturas. El pie sirve, por ejemplo, para tu cláusula de protección de datos.")
+                    .foregroundStyle(.secondary)
             }
             Section {
                 Picker("IVA", selection: $iva) {
@@ -63,7 +87,6 @@ struct AjustesView: View {
             }
         }
         .formStyle(.grouped)
-        .frame(width: 480)
-        .fixedSize(horizontal: false, vertical: true)
+        .frame(width: 500, height: 660)
     }
 }

@@ -11,14 +11,15 @@ Mantente al día con Hacienda: prepara tus facturas, apunta los gastos deducible
 
 Para cualquier autónomo en España que quiera tener sus números en orden sin pagar un programa de contabilidad completo. Está pensada para seguir siendo sencilla tanto si haces una factura al mes como treinta, a un cliente o a diez.
 
-Al Día **no** es un sistema de facturación VeriFactu y no envía nada a Hacienda. Las facturas oficiales se emiten con la **aplicación gratuita VERI\*FACTU de la AEAT**; Al Día las prepara, las controla y hace las cuentas fiscales a su alrededor.
+Mientras VeriFactu no sea obligatorio, Al Día puede **emitir tus facturas en PDF** y enviarlas por correo a tus clientes. **No** es un sistema VeriFactu ni envía nada a Hacienda: cuando VeriFactu se aplique, preparas la factura en Al Día y la emites con la **aplicación gratuita VERI\*FACTU de la AEAT**; Al Día la controla y hace las cuentas fiscales a su alrededor.
 
 ## Qué hace
 
 - **Panel** con el próximo plazo, qué modelos están presentados, los borradores pendientes y las cifras del trimestre y del año.
 - **Ingresos**: facturas con líneas, IVA y retención de IRPF, estado de cobro y PDF adjunto.
   - Los **borradores** preparados en Al Día no cuentan para impuestos hasta que los marcas como emitidos.
-  - **Ficha de emisión**: cada dato que pide la app de la AEAT, en el mismo orden, con botón de copiar.
+  - **Emitir con Al Día**: un PDF A4 limpio con todos los datos obligatorios (NIF y domicilio de emisor y cliente, líneas, IVA, retención, total, IBAN y pie propio), archivado en `~/Documents/Al Día/Facturas/<año>` y listo para **enviarlo por correo** al cliente desde tu app de correo.
+  - **Emitir en la AEAT**: cada dato que pide la app de la AEAT, en el mismo orden, con botón de copiar.
   - **Importación de PDF** de las facturas que ya tienes (hechas con una plantilla de hoja de cálculo), con revisión previa.
   - **Numeración anual** (`2027-001`, `2027-002`…, con prefijo opcional) que vuelve a empezar cada 1 de enero y nunca se repite, hagas las facturas que hagas al mes.
 - **Gastos**: IVA deducible y gasto de IRPF calculados en cada compra, con valores habituales por categoría (50 % de IVA en vehículo de uso mixto, sin IVA en la cuota de autónomos…).
@@ -35,7 +36,7 @@ Al Día **no** es un sistema de facturación VeriFactu y no envía nada a Hacien
 
 ## Cómo encaja con VeriFactu
 
-Desde el **1 de julio de 2027** todo autónomo que facture con un programa tendrá que usar un sistema que cumpla VeriFactu ([RD 1007/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840), plazo fijado por el RDL 15/2025). Programar ese software convierte a quien lo hace en su «productor» ante Hacienda, así que Al Día se queda deliberadamente en el lado seguro:
+Todo autónomo que facture con un programa tendrá que usar un sistema que cumpla VeriFactu ([RD 1007/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840)). La fecha legal es el **1 de julio de 2027** (RDL 15/2025); en octubre de 2026 Hacienda anunció un nuevo aplazamiento a **octubre de 2028**, pendiente de publicarse. Hasta entonces Al Día emite facturas en PDF como lo haría una hoja de cálculo, y avisa si la fecha de una factura es posterior al plazo (`VeriFactu.obligatorioDesde` en `FacturaPDF.swift`). Programar software VeriFactu convierte a quien lo hace en su «productor» ante Hacienda, así que a partir de entonces Al Día se queda deliberadamente en el lado seguro:
 
 1. **Preparas** la factura en Al Día (borrador).
 2. **La emites** en la [aplicación gratuita VERI\*FACTU](https://sede.agenciatributaria.gob.es/Sede/procedimientoini/IZ86.shtml) copiando los datos de la ficha.

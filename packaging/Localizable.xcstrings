@@ -318,6 +318,16 @@
         }
       }
     },
+    "Abrir PDF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open PDF"
+          }
+        }
+      }
+    },
     "Abrir documento": {
       "localizations": {
         "en": {
@@ -398,6 +408,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yearly: 2027-001, 2027-002…"
+          }
+        }
+      }
+    },
+    "Aparecen en el PDF de las facturas. El pie sirve, por ejemplo, para tu cláusula de protección de datos.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shown on invoice PDFs. Use the footer, for example, for your data protection notice."
           }
         }
       }
@@ -606,6 +626,19 @@
     "C/ Mayor, 1": {
       "shouldTranslate": false
     },
+    "C/ Mayor, 1, 2º A": {
+      "shouldTranslate": false
+    },
+    "CLIENTE": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BILL TO"
+          }
+        }
+      }
+    },
     "CONSULTORIA": {
       "localizations": {
         "en": {
@@ -692,6 +725,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Client"
+          }
+        }
+      }
+    },
+    "Cliente de la factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice client"
           }
         }
       }
@@ -996,6 +1039,16 @@
         }
       }
     },
+    "Desde el %@ las facturas hechas con programas deben cumplir VeriFactu. Emítela en la app de la AEAT (ficha «Emitir en la AEAT»). Hacienda ha anunciado un aplazamiento a octubre de 2028 pendiente de publicarse.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From %@, invoices made with software must comply with VeriFactu. Issue it in the AEAT app (“Issue with the AEAT” sheet). The tax agency has announced a delay to October 2028, not yet published."
+          }
+        }
+      }
+    },
     "Dirección": {
       "localizations": {
         "en": {
@@ -1026,6 +1079,26 @@
         }
       }
     },
+    "Domicilio del cliente (Clientes)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client address (Clients)"
+          }
+        }
+      }
+    },
+    "Domicilio fiscal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax address"
+          }
+        }
+      }
+    },
     "Duplicar como borrador…": {
       "localizations": {
         "en": {
@@ -1045,6 +1118,9 @@
           }
         }
       }
+    },
+    "ES00 0000 0000 0000 0000 0000": {
+      "shouldTranslate": false
     },
     "Editar…": {
       "localizations": {
@@ -1196,12 +1272,52 @@
         }
       }
     },
+    "Emitir con Al Día": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue with Al Día"
+          }
+        }
+      }
+    },
+    "Emitir con Al Día (PDF)…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue with Al Día (PDF)…"
+          }
+        }
+      }
+    },
     "Emitir en la AEAT…": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Issue with the AEAT…"
+          }
+        }
+      }
+    },
+    "Emitir y crear PDF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue and create PDF"
+          }
+        }
+      }
+    },
+    "Enviar por correo…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send by email…"
           }
         }
       }
@@ -1267,12 +1383,68 @@
       },
       "shouldTranslate": false
     },
+    "FACTURA": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "INVOICE"
+          }
+        }
+      }
+    },
+    "FORMA DE PAGO": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PAYMENT"
+          }
+        }
+      }
+    },
     "Factura": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Invoice"
+          }
+        }
+      }
+    },
+    "Factura %@ emitida y guardada.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice %@ issued and saved."
+          }
+        }
+      }
+    },
+    "Factura %@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice %@ · %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Factura %1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "Factura %@.pdf": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice %@.pdf"
           }
         }
       }
@@ -1303,6 +1475,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Invoices"
+          }
+        }
+      }
+    },
+    "Facturas que emite Al Día": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoices issued by Al Día"
+          }
+        }
+      }
+    },
+    "Faltan datos obligatorios": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Required details missing"
           }
         }
       }
@@ -1343,6 +1535,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Filing date"
+          }
+        }
+      }
+    },
+    "Fecha: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date: %@"
           }
         }
       }
@@ -1487,12 +1689,38 @@
         }
       }
     },
+    "Hola:\n\nTe envío la factura %@, por un total de %@.\n\nUn saludo,\n%@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hello,\n\nPlease find attached invoice %@, for a total of %@.\n\nBest regards,\n%@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Hola:\n\nTe envío la factura %1$@, por un total de %2$@.\n\nUn saludo,\n%3$@"
+          }
+        }
+      }
+    },
     "Hora de consultoría": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Consulting hour"
+          }
+        }
+      }
+    },
+    "IBAN para cobros": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IBAN for payments"
           }
         }
       }
@@ -1513,6 +1741,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "VAT"
+          }
+        }
+      }
+    },
+    "IVA %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT %@"
           }
         }
       }
@@ -1744,6 +1982,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "VAT amount doesn't match the rate"
+          }
+        }
+      }
+    },
+    "La factura está emitida, pero no se pudo guardar la copia en Documentos: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The invoice was issued, but the copy could not be saved to Documents: %@"
           }
         }
       }
@@ -2029,6 +2277,16 @@
         }
       }
     },
+    "NIF del cliente (Clientes)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client tax ID (Clients)"
+          }
+        }
+      }
+    },
     "NIF proveedor": {
       "localizations": {
         "en": {
@@ -2191,6 +2449,16 @@
         }
       }
     },
+    "Nº %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No. %@"
+          }
+        }
+      }
+    },
     "Nº de factura": {
       "localizations": {
         "en": {
@@ -2207,6 +2475,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Number"
+          }
+        }
+      }
+    },
+    "Número de factura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice number"
           }
         }
       }
@@ -2687,6 +2965,16 @@
         }
       }
     },
+    "Retención IRPF %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income tax withholding %@"
+          }
+        }
+      }
+    },
     "Retención global (%)": {
       "localizations": {
         "en": {
@@ -2703,6 +2991,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Check the data read from each PDF. They are imported as issued invoices, with the PDF attached."
+          }
+        }
+      }
+    },
+    "Se genera el PDF con los datos obligatorios, la factura pasa a «Emitida» y deja de poder cambiarse sin una rectificativa.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The PDF is created with all required details, the invoice becomes “Issued” and can no longer be changed without a corrective invoice."
           }
         }
       }
@@ -2897,6 +3195,16 @@
         }
       }
     },
+    "TOTAL A PAGAR": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TOTAL DUE"
+          }
+        }
+      }
+    },
     "Teléfono": {
       "localizations": {
         "en": {
@@ -2913,6 +3221,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Phone and internet"
+          }
+        }
+      }
+    },
+    "Texto al pie (opcional)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Footer text (optional)"
           }
         }
       }
@@ -2977,6 +3295,16 @@
         }
       }
     },
+    "Transferencia bancaria a %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bank transfer to %@"
+          }
+        }
+      }
+    },
     "Trimestre": {
       "localizations": {
         "en": {
@@ -2993,6 +3321,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Current quarter · %@"
+          }
+        }
+      }
+    },
+    "Tu NIF (Ajustes)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your NIF (Settings)"
+          }
+        }
+      }
+    },
+    "Tu domicilio fiscal (Ajustes)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your tax address (Settings)"
+          }
+        }
+      }
+    },
+    "Tu nombre (Ajustes)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your name (Settings)"
           }
         }
       }
@@ -3093,6 +3451,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Already exists"
+          }
+        }
+      }
+    },
+    "Ya hay otra factura con ese número.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Another invoice already has that number."
           }
         }
       }

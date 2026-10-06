@@ -50,6 +50,7 @@ struct IngresosView: View {
                 let elegidos = lista.filter { ids.contains($0.id) }
                 if elegidos.count == 1, let i = elegidos.first {
                     if i.esBorrador {
+                        Button("Emitir con Al Día (PDF)…") { hoja = .emitirPropia(i) }
                         Button("Emitir en la AEAT…") { hoja = .emitir(i) }
                         Divider()
                     }
@@ -60,6 +61,9 @@ struct IngresosView: View {
                     }
                     if let adjunto = i.adjunto, let nombre = i.adjuntoNombre {
                         Button("Abrir documento") { Adjuntos.abrir(adjunto, nombre: nombre) }
+                        if !i.esBorrador, !adjunto.isEmpty {
+                            Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(i) }
+                        }
                     }
                     Divider()
                 }
@@ -68,7 +72,11 @@ struct IngresosView: View {
                 }
             } primaryAction: { ids in
                 guard let i = lista.first(where: { ids.contains($0.id) }) else { return }
-                hoja = i.esBorrador ? .emitir(i) : .editar(i)
+                if i.esBorrador {
+                    hoja = VeriFactu.obliga(en: i.fecha) ? .emitir(i) : .emitirPropia(i)
+                } else {
+                    hoja = .editar(i)
+                }
             }
             .overlay {
                 if lista.isEmpty {
@@ -110,6 +118,7 @@ struct IngresosView: View {
             case .editar(let i): IngresoEditor(ingreso: i)
             case .duplicar(let i): IngresoEditor(plantilla: i)
             case .emitir(let i): FichaEmisionView(ingreso: i)
+            case .emitirPropia(let i): EmitirConAlDiaView(ingreso: i)
             }
         }
         .confirmationDialog("¿Eliminar \(aEliminar.count) factura(s)?", isPresented: .init(
@@ -155,6 +164,7 @@ enum HojaIngreso: Identifiable {
     case editar(Ingreso)
     case duplicar(Ingreso)
     case emitir(Ingreso)
+    case emitirPropia(Ingreso)
 
     var id: String {
         switch self {
@@ -162,6 +172,7 @@ enum HojaIngreso: Identifiable {
         case .editar(let i): "editar-\(i.id.hashValue)"
         case .duplicar(let i): "duplicar-\(i.id.hashValue)"
         case .emitir(let i): "emitir-\(i.id.hashValue)"
+        case .emitirPropia(let i): "emitir-propia-\(i.id.hashValue)"
         }
     }
 }

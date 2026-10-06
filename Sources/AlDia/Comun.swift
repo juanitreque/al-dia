@@ -8,6 +8,19 @@ import AlDiaCore
 enum Ajustes {
     static let nombre = "emisor.nombre"
     static let nif = "emisor.nif"
+    // Datos que aparecen en las facturas que emite Al Día
+    static let direccion = "emisor.direccion"
+    static let codigoPostal = "emisor.cp"
+    static let poblacion = "emisor.poblacion"
+    static let provincia = "emisor.provincia"
+    static let email = "emisor.email"
+    static let telefono = "emisor.telefono"
+    static let iban = "emisor.iban"
+    static let pieFactura = "factura.pie"
+
+    static func texto(_ clave: String) -> String {
+        (UserDefaults.standard.string(forKey: clave) ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+    }
     static let ivaDefecto = "defecto.iva"
     static let retencionDefecto = "defecto.retencion"
     /// "anual" (2027-001, por defecto) o "continuar" (sigue el formato de la última factura).
