@@ -363,20 +363,44 @@ struct PaqueteGestorView: View {
 // MARK: - Correo
 
 enum Correo {
-    /// Correo nuevo en la app de correo con un adjunto; si no se puede, muestra el archivo en el Finder.
+    /// Correo nuevo con un adjunto en la app de correo predeterminada.
+    /// - Mail: servicio de redactar correo (asunto, destinatario, texto y adjunto).
+    /// - Otras (Spark, Outlook…): el método anterior solo les llega como enlace `mailto:`, que no admite
+    ///   adjuntos; se usa su extensión de compartir, que sí recibe el archivo. Si no tienen extensión,
+    ///   se les abre el archivo (crea un borrador con el adjunto) y el texto queda en el portapapeles.
     @MainActor
     static func enviar(adjunto: URL, para: String, asunto: String, cuerpo: String) {
-        guard let servicio = NSSharingService(named: .composeEmail) else {
+        let destinatario = para.trimmingCharacters(in: .whitespaces)
+        let app = NSWorkspace.shared.urlForApplication(toOpen: URL(string: "mailto:")!)
+        let esMail = app.flatMap { Bundle(url: $0)?.bundleIdentifier } == "com.apple.mail"
+
+        if esMail || app == nil, let servicio = NSSharingService(named: .composeEmail),
+           servicio.canPerform(withItems: [cuerpo, adjunto]) {
+            servicio.subject = asunto
+            if !destinatario.isEmpty { servicio.recipients = [destinatario] }
+            servicio.perform(withItems: [cuerpo, adjunto])
+            return
+        }
+        guard let app else {
             NSWorkspace.shared.activateFileViewerSelecting([adjunto])
             return
         }
-        servicio.subject = asunto
-        let destinatario = para.trimmingCharacters(in: .whitespaces)
-        if !destinatario.isEmpty { servicio.recipients = [destinatario] }
-        if servicio.canPerform(withItems: [cuerpo, adjunto]) {
+
+        // Extensión de compartir de la app de correo: su título contiene el nombre de la app ("Spark Desktop").
+        // sharingServices(forItems:) está desaconsejada desde macOS 13, pero es la única forma de elegir
+        // un servicio concreto sin mostrar el menú de compartir.
+        let clave = FileManager.default.displayName(atPath: app.path)
+            .split(separator: " ").first.map { $0.lowercased() } ?? ""
+        if !clave.isEmpty,
+           let servicio = NSSharingService.sharingServices(forItems: [adjunto])
+               .first(where: { $0.title.lowercased().contains(clave) }) {
+            servicio.subject = asunto
+            if !destinatario.isEmpty { servicio.recipients = [destinatario] }
             servicio.perform(withItems: [cuerpo, adjunto])
-        } else {
-            NSWorkspace.shared.activateFileViewerSelecting([adjunto])
+            return
         }
+
+        Portapapeles.copiar(cuerpo)
+        NSWorkspace.shared.open([adjunto], withApplicationAt: app, configuration: NSWorkspace.OpenConfiguration())
     }
 }

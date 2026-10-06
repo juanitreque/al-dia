@@ -309,17 +309,7 @@ enum FacturaPDF {
         Un saludo,
         \(Ajustes.texto(Ajustes.nombre))
         """)
-        guard let servicio = NSSharingService(named: .composeEmail) else {
-            NSWorkspace.shared.activateFileViewerSelecting([url])
-            return
-        }
-        servicio.subject = asunto
-        if let email = ingreso.cliente?.email, !email.isEmpty { servicio.recipients = [email] }
-        if servicio.canPerform(withItems: [cuerpo, url]) {
-            servicio.perform(withItems: [cuerpo, url])
-        } else {
-            NSWorkspace.shared.activateFileViewerSelecting([url])
-        }
+        Correo.enviar(adjunto: url, para: ingreso.cliente?.email ?? "", asunto: asunto, cuerpo: cuerpo)
     }
 }
 
