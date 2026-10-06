@@ -288,8 +288,9 @@ enum FacturaPDF {
     /// Abre un correo nuevo en la app de correo con el PDF adjunto y el cliente como destinatario.
     @MainActor
     /// - `datos`: el PDF a adjuntar; por defecto, el documento adjunto de la factura.
-    static func enviarPorCorreo(_ ingreso: Ingreso, datos: Data? = nil) {
-        guard let datos = datos ?? ingreso.adjunto, !datos.isEmpty else { return }
+    @discardableResult
+    static func enviarPorCorreo(_ ingreso: Ingreso, datos: Data? = nil) -> EnvioCorreo? {
+        guard let datos = datos ?? ingreso.adjunto, !datos.isEmpty else { return nil }
         let carpeta = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
         let url = carpeta.appendingPathComponent(nombreArchivo(ingreso))
         do {
@@ -297,7 +298,7 @@ enum FacturaPDF {
             try datos.write(to: url)
         } catch {
             NSSound.beep()
-            return
+            return nil
         }
         let mes = ingreso.fecha.formatted(.dateTime.month(.wide).year())
         let asunto = String(localized: "Factura \(ingreso.numero) · \(mes)")
@@ -309,7 +310,7 @@ enum FacturaPDF {
         Un saludo,
         \(Ajustes.texto(Ajustes.nombre))
         """)
-        Correo.enviar(adjunto: url, para: ingreso.cliente?.email ?? "", asunto: asunto, cuerpo: cuerpo)
+        return Correo.enviar(adjunto: url, para: ingreso.cliente?.email ?? "", asunto: asunto, cuerpo: cuerpo)
     }
 }
 
@@ -327,6 +328,7 @@ struct EmitirConAlDiaView: View {
     @State private var emitida = false
     @State private var copia: URL?
     @State private var error: String?
+    @State private var envio: EnvioCorreo?
 
     init(ingreso: Ingreso) {
         self.ingreso = ingreso
@@ -352,7 +354,7 @@ struct EmitirConAlDiaView: View {
                         HStack {
                             Button("Abrir PDF") { abrir() }
                             Button("Imprimir…") { if let datos = ingreso.adjunto { FacturaPDF.imprimir(datos) } }
-                            Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(ingreso) }
+                            Button("Enviar por correo…") { envio = FacturaPDF.enviarPorCorreo(ingreso) }
                                 .keyboardShortcut(.defaultAction)
                             if let copia {
                                 Button("Mostrar en Finder") { NSWorkspace.shared.activateFileViewerSelecting([copia]) }
@@ -362,6 +364,9 @@ struct EmitirConAlDiaView: View {
                         if let copia {
                             Text(verbatim: copia.path(percentEncoded: false)).foregroundStyle(.secondary).textSelection(.enabled)
                         }
+                    }
+                    if let envio, envio.resultado != .completo {
+                        Section { CamposCorreoACopiar(envio: envio) }
                     }
                 } else {
                     Section {
@@ -465,6 +470,7 @@ struct VistaFacturaView: View {
     @Environment(\.dismiss) private var dismiss
     let ingreso: Ingreso
     @State private var datos = Data()
+    @State private var envio: EnvioCorreo?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -474,6 +480,11 @@ struct VistaFacturaView: View {
                 VisorPDF(datos: datos)
             }
             Divider()
+            if let envio, envio.resultado != .completo {
+                Form { CamposCorreoACopiar(envio: envio) }
+                    .formStyle(.grouped)
+                    .frame(height: envio.resultado == .textoEnPortapapeles ? 170 : 140)
+            }
             HStack {
                 if ingreso.esBorrador {
                     Label("Borrador: emítela para poder enviarla.", systemImage: "info.circle")
@@ -484,7 +495,7 @@ struct VistaFacturaView: View {
                 Button("Guardar PDF…") { guardar() }
                 Button("Imprimir…") { FacturaPDF.imprimir(datos) }
                     .keyboardShortcut("p")
-                Button("Enviar por correo…") { FacturaPDF.enviarPorCorreo(ingreso, datos: datos) }
+                Button("Enviar por correo…") { envio = FacturaPDF.enviarPorCorreo(ingreso, datos: datos) }
                     .keyboardShortcut(.defaultAction)
                     .disabled(ingreso.esBorrador)
             }

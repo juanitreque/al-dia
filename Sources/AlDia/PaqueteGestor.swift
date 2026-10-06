@@ -273,6 +273,7 @@ struct PaqueteGestorView: View {
     let trimestre: Trimestre
     @State private var incluirDocumentos = true
     @State private var error: String?
+    @State private var envio: EnvioCorreo?
 
     private var paquete: PaqueteGestor {
         PaqueteGestor(trimestre: trimestre, ingresos: ingresos, gastos: gastos, modelos: modelos)
@@ -306,6 +307,9 @@ struct PaqueteGestorView: View {
                 if let error {
                     Text(verbatim: error).foregroundStyle(.red)
                 }
+                if let envio, envio.resultado != .completo {
+                    Section { CamposCorreoACopiar(envio: envio) }
+                }
             }
             .formStyle(.grouped)
 
@@ -318,7 +322,7 @@ struct PaqueteGestorView: View {
             .disabled(p.ingresos.isEmpty && p.gastos.isEmpty)
             .padding()
         }
-        .frame(width: 520, height: 470)
+        .frame(width: 520, height: 560)
     }
 
     private func crear() -> URL? {
@@ -356,11 +360,38 @@ struct PaqueteGestorView: View {
         """)
         let autonomo = Ajustes.texto(Ajustes.nombre)
         let asunto = String(localized: "Documentación \(trimestre.nombre)") + (autonomo.isEmpty ? "" : " · \(autonomo)")
-        Correo.enviar(adjunto: zip, para: emailGestor, asunto: asunto, cuerpo: cuerpo)
+        envio = Correo.enviar(adjunto: zip, para: emailGestor, asunto: asunto, cuerpo: cuerpo)
     }
 }
 
 // MARK: - Correo
+
+/// Lo que ha recibido la app de correo, para completar a mano lo que falte.
+struct EnvioCorreo: Equatable {
+    enum Resultado { case completo, sinAsuntoNiDestinatario, textoEnPortapapeles }
+    let resultado: Resultado
+    let para: String
+    let asunto: String
+}
+
+/// Destinatario y asunto con botón de copiar, cuando la app de correo no los ha recibido.
+struct CamposCorreoACopiar: View {
+    let envio: EnvioCorreo
+
+    var body: some View {
+        if envio.resultado != .completo {
+            Label("Tu app de correo ha recibido el adjunto, pero no el destinatario ni el asunto: cópialos desde aquí.",
+                  systemImage: "info.circle")
+                .foregroundStyle(.secondary)
+            if !envio.para.isEmpty { DatoCopiable(titulo: "Para", valor: envio.para) }
+            DatoCopiable(titulo: "Asunto", valor: envio.asunto)
+            if envio.resultado == .textoEnPortapapeles {
+                Label("El texto del mensaje está copiado: pégalo con ⌘V.", systemImage: "doc.on.clipboard")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
 
 enum Correo {
     /// Correo nuevo con un adjunto en la app de correo predeterminada.
@@ -368,9 +399,10 @@ enum Correo {
     /// - Otras (Spark, Outlook…): el método anterior solo les llega como enlace `mailto:`, que no admite
     ///   adjuntos; se usa su extensión de compartir, que sí recibe el archivo. Si no tienen extensión,
     ///   se les abre el archivo (crea un borrador con el adjunto) y el texto queda en el portapapeles.
-    @MainActor
-    static func enviar(adjunto: URL, para: String, asunto: String, cuerpo: String) {
+    @MainActor @discardableResult
+    static func enviar(adjunto: URL, para: String, asunto: String, cuerpo: String) -> EnvioCorreo {
         let destinatario = para.trimmingCharacters(in: .whitespaces)
+        func envio(_ r: EnvioCorreo.Resultado) -> EnvioCorreo { EnvioCorreo(resultado: r, para: destinatario, asunto: asunto) }
         let app = NSWorkspace.shared.urlForApplication(toOpen: URL(string: "mailto:")!)
         let esMail = app.flatMap { Bundle(url: $0)?.bundleIdentifier } == "com.apple.mail"
 
@@ -379,11 +411,11 @@ enum Correo {
             servicio.subject = asunto
             if !destinatario.isEmpty { servicio.recipients = [destinatario] }
             servicio.perform(withItems: [cuerpo, adjunto])
-            return
+            return envio(.completo)
         }
         guard let app else {
             NSWorkspace.shared.activateFileViewerSelecting([adjunto])
-            return
+            return envio(.sinAsuntoNiDestinatario)
         }
 
         // Extensión de compartir de la app de correo: su título contiene el nombre de la app ("Spark Desktop").
@@ -397,10 +429,11 @@ enum Correo {
             servicio.subject = asunto
             if !destinatario.isEmpty { servicio.recipients = [destinatario] }
             servicio.perform(withItems: [cuerpo, adjunto])
-            return
+            return envio(.sinAsuntoNiDestinatario)
         }
 
         Portapapeles.copiar(cuerpo)
         NSWorkspace.shared.open([adjunto], withApplicationAt: app, configuration: NSWorkspace.OpenConfiguration())
+        return envio(.textoEnPortapapeles)
     }
 }

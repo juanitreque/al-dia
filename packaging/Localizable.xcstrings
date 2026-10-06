@@ -493,6 +493,16 @@
         }
       }
     },
+    "Asunto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subject"
+          }
+        }
+      }
+    },
     "Añadir línea": {
       "localizations": {
         "en": {
@@ -1249,6 +1259,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "The deadline was %@."
+          }
+        }
+      }
+    },
+    "El texto del mensaje está copiado: pégalo con ⌘V.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The message text is copied: paste it with ⌘V."
           }
         }
       }
@@ -2886,6 +2906,16 @@
         }
       }
     },
+    "Para": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To"
+          }
+        }
+      }
+    },
     "País (código)": {
       "localizations": {
         "en": {
@@ -3694,6 +3724,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Your NIF (Settings)"
+          }
+        }
+      }
+    },
+    "Tu app de correo ha recibido el adjunto, pero no el destinatario ni el asunto: cópialos desde aquí.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your mail app received the attachment, but not the recipient or subject: copy them from here."
           }
         }
       }
