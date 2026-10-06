@@ -188,6 +188,17 @@
     "2026-001": {
       "shouldTranslate": false
     },
+    "28001": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "28001"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
     "3 · Productos (Recuperar producto/servicio)": {
       "localizations": {
         "en": {
@@ -412,12 +423,12 @@
         }
       }
     },
-    "Aparecen en el PDF de las facturas. El pie sirve, por ejemplo, para tu cláusula de protección de datos.": {
+    "Aparecen en el PDF de las facturas. En el pie, {nombre}, {nif}, {domicilio} y {email} se sustituyen por tus datos.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Shown on invoice PDFs. Use the footer, for example, for your data protection notice."
+            "value": "Shown on invoice PDFs. In the footer, {nombre}, {nif}, {domicilio} and {email} are replaced with your details."
           }
         }
       }
@@ -1711,6 +1722,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Consulting hour"
+          }
+        }
+      }
+    },
+    "IBAN correcto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valid IBAN"
+          }
+        }
+      }
+    },
+    "IBAN no válido: revisa las cifras": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invalid IBAN: check the digits"
           }
         }
       }
@@ -3391,6 +3422,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "A receipt or simplified invoice without your NIF doesn't allow VAT deduction; ask for a full invoice."
+          }
+        }
+      }
+    },
+    "Usar la cláusula de protección de datos recomendada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use the recommended data protection notice"
           }
         }
       }

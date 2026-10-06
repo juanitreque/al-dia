@@ -32,20 +32,19 @@ struct AjustesView: View {
                 TextField("Nombre", text: $nombre)
                 TextField("NIF", text: $nif)
                 TextField("Domicilio fiscal", text: $direccion, prompt: Text("C/ Mayor, 1, 2º A"))
-                TextField("Código postal", text: $codigoPostal)
-                TextField("Población", text: $poblacion)
-                TextField("Provincia", text: $provincia)
+                CamposLocalidad(codigoPostal: $codigoPostal, poblacion: $poblacion, provincia: $provincia)
                 TextField("Email", text: $email)
                 TextField("Teléfono", text: $telefono)
             }
             Section {
-                TextField("IBAN para cobros", text: $iban, prompt: Text("ES00 0000 0000 0000 0000 0000"))
+                CampoIBAN(iban: $iban)
                 TextField("Texto al pie (opcional)", text: $pie, axis: .vertical)
-                    .lineLimit(2...5)
+                    .lineLimit(2...8)
+                Button("Usar la cláusula de protección de datos recomendada") { pie = PieFactura.clausulaRGPD }
             } header: {
                 Text("Facturas que emite Al Día")
             } footer: {
-                Text("Aparecen en el PDF de las facturas. El pie sirve, por ejemplo, para tu cláusula de protección de datos.")
+                Text("Aparecen en el PDF de las facturas. En el pie, {nombre}, {nif}, {domicilio} y {email} se sustituyen por tus datos.")
                     .foregroundStyle(.secondary)
             }
             Section {

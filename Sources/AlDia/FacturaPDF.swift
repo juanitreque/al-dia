@@ -24,6 +24,19 @@ struct Emisor {
     var telefono = Ajustes.texto(Ajustes.telefono)
     var iban = Ajustes.texto(Ajustes.iban)
     var pie = Ajustes.texto(Ajustes.pieFactura)
+
+    /// "29600 Marbella (Málaga)": la provincia solo si no coincide con la población.
+    var localidad: String {
+        let base = [codigoPostal, poblacion].filter { !$0.isEmpty }.joined(separator: " ")
+        guard !provincia.isEmpty, provincia.lowercased() != poblacion.lowercased() else { return base }
+        return "\(base) (\(provincia))"
+    }
+
+    /// Pie con los marcadores {nombre}, {nif}, {domicilio} y {email} sustituidos.
+    var pieFinal: String {
+        PieFactura.rellenar(pie, nombre: nombre, nif: nif,
+                            domicilio: [direccion, localidad].filter { !$0.isEmpty }.joined(separator: ", "), email: email)
+    }
 }
 
 /// Lo que falta para que la factura tenga los datos obligatorios (art. 6 del Reglamento de facturación).
@@ -127,8 +140,8 @@ struct PlantillaFactura: View {
 
             Spacer(minLength: 0)
 
-            if !emisor.pie.isEmpty {
-                Text(verbatim: emisor.pie)
+            if !emisor.pieFinal.isEmpty {
+                Text(verbatim: emisor.pieFinal)
                     .font(.system(size: 7.5))
                     .foregroundStyle(gris)
                     .fixedSize(horizontal: false, vertical: true)

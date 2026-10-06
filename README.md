@@ -28,7 +28,8 @@ Until VeriFactu becomes mandatory, Al Día can **issue your invoices as PDF** an
 - **Clients and services** catalogue, exportable in the exact text format the AEAT app imports.
 - **CSV export** of income and expense ledgers for your accountant (Spanish Excel format).
 - **English and Spanish** interface (follows the macOS language).
-- **Local and private**: everything stays on your Mac, no account, no network calls.
+- **Local and private**: everything stays on your Mac, no account. The only network request is optional: typing a postcode asks Apple's geocoder for the town (only the postcode is sent).
+- **Smart fields**: province from the postcode, IBAN grouped in fours and checked (ISO 13616), recommended GDPR footer filled in with your details.
 
 | Income | Issue with the AEAT | Tax forms | Settings |
 |---|---|---|---|

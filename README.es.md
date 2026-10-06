@@ -28,7 +28,8 @@ Mientras VeriFactu no sea obligatorio, Al Día puede **emitir tus facturas en PD
 - **Clientes y servicios**, exportables en el formato de texto exacto que importa la app de la AEAT.
 - **Exportación CSV** de los libros de ingresos y gastos para tu gestor.
 - Interfaz en **castellano e inglés** (según el idioma del Mac).
-- **Local y privada**: todo se queda en tu Mac, sin cuentas ni conexiones a internet.
+- **Local y privada**: todo se queda en tu Mac, sin cuentas. La única conexión es opcional: al escribir un código postal se pregunta la población al servicio de mapas de Apple (solo se envía el código postal).
+- **Campos que se rellenan solos**: provincia por el código postal, IBAN agrupado de 4 en 4 y comprobado (ISO 13616), y cláusula de protección de datos recomendada con tus datos.
 
 | Ingresos | Emitir en la AEAT | Modelos fiscales | Ajustes |
 |---|---|---|---|
