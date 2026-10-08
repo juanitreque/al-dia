@@ -7,7 +7,7 @@
 
 ¿Quieres probar sin tus datos? Abre **Al Día (demostración)** en el menú Inicio: arranca con datos ficticios que se borran al cerrar.
 
-La versión **portable** (`…-portable.zip`) no necesita instalación: descomprímela y abre `AlDia.exe`.
+La versión **portable** (`…-portable.zip`) no necesita instalación: descomprímela (clic derecho → Extraer todo), entra en la carpeta «Al Dia» y abre `AlDia.exe`.
 
 ### Qué incluye
 - Panel con el próximo plazo y el resumen del trimestre y del año.

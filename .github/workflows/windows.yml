@@ -50,7 +50,12 @@ jobs:
           iscc /DVersion=${{ steps.version.outputs.version }} installer/AlDia.iss
 
       - name: Zip portable
-        run: Compress-Archive -Path publish/win-x64/* -DestinationPath "installer/salida/AlDia-Windows-${{ steps.version.outputs.version }}-portable.zip"
+        # Una sola carpeta «Al Dia» dentro del zip, sin los archivos de depuración (.pdb)
+        run: |
+          New-Item -ItemType Directory -Force portable | Out-Null
+          Copy-Item publish/win-x64 "portable/Al Dia" -Recurse
+          Get-ChildItem "portable/Al Dia" -Recurse -Filter *.pdb | Remove-Item
+          Compress-Archive -Path "portable/Al Dia" -DestinationPath "installer/salida/AlDia-Windows-${{ steps.version.outputs.version }}-portable.zip"
 
       - uses: actions/upload-artifact@v4
         with:
