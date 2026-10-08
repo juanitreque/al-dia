@@ -53,7 +53,7 @@ Antes de la primera factura, exporta tus clientes y servicios desde Al Día e im
 
 ```bash
 git clone https://github.com/juanitreque/al-dia.git
-cd al-dia
+cd al-dia/mac
 scripts/build-app.sh --install
 ```
 
@@ -68,6 +68,7 @@ Todo se guarda en `~/Library/Application Support/AlDia/` (una base de datos Swif
 ## Desarrollo
 
 ```bash
+cd mac
 swift test                        # tests de la lógica fiscal (AlDiaCore)
 swift run AlDia --demo            # arranca con una base temporal llena de datos de ejemplo
 scripts/sync-strings.sh           # extrae los textos a packaging/Localizable.xcstrings
@@ -75,12 +76,16 @@ swift scripts/make-icon.swift     # regenera el icono
 ```
 
 ```
-Sources/
-  AlDiaCore/   lógica pura: trimestres, plazos, modelos 303/130, numeración, lectores de facturas y tickets, formatos AEAT
-  AlDia/       app SwiftUI: modelos SwiftData, vistas, datos de demostración
-Tests/         tests (Swift Testing) de AlDiaCore
-packaging/     Info.plist, icono y Localizable.xcstrings (castellano de origen, traducción al inglés)
-scripts/       compilación, sincronización de textos e icono
+mac/                app de macOS (SwiftUI + SwiftData)
+  Sources/
+    AlDiaCore/   lógica pura: trimestres, plazos, modelos 303/130, numeración, lectores de facturas y tickets, formatos AEAT
+    AlDia/       app SwiftUI: modelos SwiftData, vistas, datos de demostración
+  Tests/         tests (Swift Testing) de AlDiaCore
+  packaging/     Info.plist, icono y Localizable.xcstrings (castellano de origen, traducción al inglés)
+  scripts/       compilación, sincronización de textos e icono
+windows/            versión para Windows (.NET, en desarrollo)
+  src/AlDia.Core/   la misma lógica fiscal portada a C#
+  tests/            los mismos casos de prueba (xUnit): dotnet test
 ```
 
 El castellano es el idioma de origen del código y del catálogo de textos; el inglés está en `packaging/Localizable.xcstrings` (se edita con Xcode). Las contribuciones son bienvenidas, sobre todo correcciones de la lógica fiscal, que deben venir con su test.

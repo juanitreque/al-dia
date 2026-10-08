@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AlDia.Core/AlDia.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AlDia.Core.Tests/AlDia.Core.Tests.csproj" />
+  </Folder>
+</Solution>

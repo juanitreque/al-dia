@@ -53,7 +53,7 @@ Before your first invoice, export your clients and services from Al Día and imp
 
 ```bash
 git clone https://github.com/juanitreque/al-dia.git
-cd al-dia
+cd al-dia/mac
 scripts/build-app.sh --install
 ```
 
@@ -68,6 +68,7 @@ Everything is stored in `~/Library/Application Support/AlDia/` (a SwiftData/SQLi
 ## Development
 
 ```bash
+cd mac
 swift test                        # fiscal logic tests (AlDiaCore)
 swift run AlDia --demo            # run with a temporary database full of sample data
 scripts/sync-strings.sh           # extract UI strings into packaging/Localizable.xcstrings
@@ -75,12 +76,16 @@ swift scripts/make-icon.swift     # regenerate the app icon
 ```
 
 ```
-Sources/
-  AlDiaCore/   pure logic: quarters, deadlines, Form 303/130, numbering, invoice and receipt readers, AEAT formats
-  AlDia/       SwiftUI app: SwiftData models, views, demo data
-Tests/         Swift Testing suites for AlDiaCore
-packaging/     Info.plist, icon and Localizable.xcstrings (Spanish source, English translation)
-scripts/       build, string sync and icon scripts
+mac/                macOS app (SwiftUI + SwiftData)
+  Sources/
+    AlDiaCore/   pure logic: quarters, deadlines, Form 303/130, numbering, invoice and receipt readers, AEAT formats
+    AlDia/       SwiftUI app: SwiftData models, views, demo data
+  Tests/         Swift Testing suites for AlDiaCore
+  packaging/     Info.plist, icon and Localizable.xcstrings (Spanish source, English translation)
+  scripts/       build, string sync and icon scripts
+windows/            Windows version (.NET, work in progress)
+  src/AlDia.Core/   the same tax logic ported to C#
+  tests/            the same test cases (xUnit): dotnet test
 ```
 
 Spanish is the source language of the code and the string catalog; English lives in `packaging/Localizable.xcstrings` (editable in Xcode). Contributions are welcome — especially fixes to the tax logic, which should come with a test.
