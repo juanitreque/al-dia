@@ -47,7 +47,7 @@ public class LectorFacturaTests
     [Fact]
     public void AvisaSiNoCuadra()
     {
-        var alterada = Muestra.Replace("PERSONAL(2) 3 35,00 105,00\n", "");
+        var alterada = Muestra.ReplaceLineEndings("\n").Replace("PERSONAL(2) 3 35,00 105,00\n", "");
         var f = LectorFactura.Analizar(alterada);
         Assert.NotNull(f);
         Assert.Equal(["Las líneas no suman la base"], f.Avisos);
