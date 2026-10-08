@@ -1,0 +1,67 @@
+name: Windows
+
+on:
+  push:
+    branches: [main]
+    paths: ["windows/**", ".github/workflows/windows.yml"]
+    tags: ["windows-v*"]
+  pull_request:
+    paths: ["windows/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compilar:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: windows
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Tests
+        run: dotnet test AlDia.slnx -c Release
+
+      - name: Versión
+        id: version
+        run: |
+          $etiqueta = "${{ github.ref_name }}"
+          if ($etiqueta -like "windows-v*") { $v = $etiqueta -replace '^windows-v', '' } else { $v = "0.0.0-dev" }
+          $numero = $v -replace '-.*$', ''
+          "version=$v" >> $env:GITHUB_OUTPUT
+          "numero=$numero" >> $env:GITHUB_OUTPUT
+
+      - name: Publicar
+        run: dotnet publish src/AlDia -c Release -r win-x64 --self-contained -p:Version=${{ steps.version.outputs.numero }} -o publish/win-x64
+
+      - name: Instalador
+        run: |
+          if (-not (Get-Command iscc -ErrorAction SilentlyContinue)) {
+            if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup -y --no-progress }
+            $env:Path += ";${env:ProgramFiles(x86)}\Inno Setup 6"
+          }
+          iscc /DVersion=${{ steps.version.outputs.version }} installer/AlDia.iss
+
+      - name: Zip portable
+        run: Compress-Archive -Path publish/win-x64/* -DestinationPath "installer/salida/AlDia-Windows-${{ steps.version.outputs.version }}-portable.zip"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AlDia-Windows-${{ steps.version.outputs.version }}
+          path: windows/installer/salida/*
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/windows-v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          $pre = if ($v -like "*-*") { "--prerelease" } else { "" }
+          gh release create "${{ github.ref_name }}" (Get-ChildItem installer/salida/*).FullName --title "Al Día para Windows $v" --notes-file installer/NOTAS.md $pre

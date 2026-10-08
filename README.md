@@ -1,9 +1,9 @@
 # Al Día
 
-**Simple bookkeeping for Spanish *autónomos* — a native macOS app.**
+**Simple bookkeeping for Spanish *autónomos* — native apps for macOS and Windows.**
 Stay up to date with Hacienda: prepare invoices, log deductible expenses and get your quarterly tax forms (303 / 130) calculated, box by box.
 
-[Leer en castellano](README.es.md) · macOS 15+ · Swift 6 · SwiftUI + SwiftData · [MIT](LICENSE)
+[Leer en castellano](README.es.md) · macOS 15+ (Swift/SwiftUI) · Windows 10/11 (.NET/Avalonia, beta) · [MIT](LICENSE)
 
 ![Al Día dashboard](docs/img/en-dashboard.jpg)
 
@@ -61,6 +61,14 @@ Requirements: macOS 15 or later and Xcode 16 or later (command line tools are en
 
 This puts **Al Día.app** in `/Applications`. The app is signed ad-hoc, so the first time macOS may say it cannot verify the developer: right-click the app → **Open** → **Open**.
 
+### Windows (beta)
+
+Download **`AlDia-Windows-…-instalador.exe`** from [Releases](https://github.com/juanitreque/al-dia/releases) (look for *Al Día para Windows*) and run it. The installer is not signed, so Windows SmartScreen shows *Windows protected your PC*: click **More info → Run anyway**. It installs for your user only, without administrator rights. A *portable* zip is also available.
+
+The Windows version shares the same tax logic and test cases as the Mac app. In this beta the interface is Spanish-only, photos of receipts are attached but not read (PDFs are), and e-mails are prepared as `.eml` drafts for your mail program. Data lives in `%APPDATA%\AlDia`; issued invoices are copied to `Documents\Al Día`. Start menu → *Al Día (demostración)* opens it with sample data.
+
+To build it yourself (Windows, macOS or Linux with the .NET 10 SDK): `cd windows && dotnet test && dotnet run --project src/AlDia -- --demo`. The installer is built by GitHub Actions (`.github/workflows/windows.yml`) with Inno Setup when a `windows-v*` tag is pushed.
+
 ## Your data
 
 Everything is stored in `~/Library/Application Support/AlDia/` (a SwiftData/SQLite database plus attached PDFs) and is included in Time Machine backups. *Settings → Show in Finder* opens the folder. Nothing leaves your Mac.
@@ -83,9 +91,11 @@ mac/                macOS app (SwiftUI + SwiftData)
   Tests/         Swift Testing suites for AlDiaCore
   packaging/     Info.plist, icon and Localizable.xcstrings (Spanish source, English translation)
   scripts/       build, string sync and icon scripts
-windows/            Windows version (.NET, work in progress)
+windows/            Windows app (.NET 10 + Avalonia, SQLite, QuestPDF)
   src/AlDia.Core/   the same tax logic ported to C#
+  src/AlDia/        the app: data, invoice PDF, accountant package, screens
   tests/            the same test cases (xUnit): dotnet test
+  installer/        Inno Setup script and release notes
 ```
 
 Spanish is the source language of the code and the string catalog; English lives in `packaging/Localizable.xcstrings` (editable in Xcode). Contributions are welcome — especially fixes to the tax logic, which should come with a test.

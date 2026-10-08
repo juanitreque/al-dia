@@ -1,9 +1,9 @@
 # Al Día
 
-**Contabilidad sencilla para autónomos en España: una app nativa para Mac.**
+**Contabilidad sencilla para autónomos en España: apps nativas para Mac y Windows.**
 Mantente al día con Hacienda: prepara tus facturas, apunta los gastos deducibles y ten calculados tus modelos trimestrales (303 / 130), casilla por casilla.
 
-[Read in English](README.md) · macOS 15+ · Swift 6 · SwiftUI + SwiftData · [MIT](LICENSE)
+[Read in English](README.md) · macOS 15+ (Swift/SwiftUI) · Windows 10/11 (.NET/Avalonia, beta) · [MIT](LICENSE)
 
 ![Panel de Al Día](docs/img/es-panel.jpg)
 
@@ -61,6 +61,14 @@ Necesitas macOS 15 o posterior y Xcode 16 o posterior (hace falta el toolchain d
 
 La app queda en la carpeta Aplicaciones (`/Applications`) como **Al Día.app**. Está firmada sin certificado de desarrollador, así que la primera vez macOS puede decir que no puede verificarla: clic derecho sobre la app → **Abrir** → **Abrir**.
 
+### Windows (beta)
+
+Descarga **`AlDia-Windows-…-instalador.exe`** desde [Releases](https://github.com/juanitreque/al-dia/releases) (busca *Al Día para Windows*) y ábrelo. El instalador no está firmado, así que Windows muestra «Windows protegió su PC»: pulsa **Más información → Ejecutar de todas formas**. Se instala solo para tu usuario, sin contraseña de administrador. También hay un zip *portable* que no necesita instalación.
+
+La versión de Windows comparte la misma lógica fiscal y los mismos casos de prueba que la de Mac. En esta beta la interfaz está solo en castellano, las fotos de tickets se adjuntan pero no se leen (los PDF sí) y los correos se preparan como borrador `.eml` para tu programa de correo. Los datos se guardan en `%APPDATA%\AlDia` y las facturas emitidas se copian en `Documentos\Al Día`. Menú Inicio → *Al Día (demostración)* la abre con datos de ejemplo.
+
+Para compilarla tú (Windows, macOS o Linux con el SDK de .NET 10): `cd windows && dotnet test && dotnet run --project src/AlDia -- --demo`. El instalador lo genera GitHub Actions (`.github/workflows/windows.yml`) con Inno Setup al subir una etiqueta `windows-v*`.
+
 ## Tus datos
 
 Todo se guarda en `~/Library/Application Support/AlDia/` (una base de datos SwiftData/SQLite y los PDF adjuntos) y entra en las copias de Time Machine. *Ajustes → Mostrar en Finder* abre la carpeta. Nada sale de tu Mac.
@@ -83,9 +91,11 @@ mac/                app de macOS (SwiftUI + SwiftData)
   Tests/         tests (Swift Testing) de AlDiaCore
   packaging/     Info.plist, icono y Localizable.xcstrings (castellano de origen, traducción al inglés)
   scripts/       compilación, sincronización de textos e icono
-windows/            versión para Windows (.NET, en desarrollo)
+windows/            app de Windows (.NET 10 + Avalonia, SQLite, QuestPDF)
   src/AlDia.Core/   la misma lógica fiscal portada a C#
+  src/AlDia/        la app: datos, PDF de factura, paquete del gestor, pantallas
   tests/            los mismos casos de prueba (xUnit): dotnet test
+  installer/        script de Inno Setup y notas de la versión
 ```
 
 El castellano es el idioma de origen del código y del catálogo de textos; el inglés está en `packaging/Localizable.xcstrings` (se edita con Xcode). Las contribuciones son bienvenidas, sobre todo correcciones de la lógica fiscal, que deben venir con su test.
