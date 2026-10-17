@@ -5,12 +5,23 @@ import SwiftUI
 import AlDiaCore
 
 /// Fecha en que la factura con programas debe cumplir VeriFactu para autónomos (RD 1007/2023, RDL 15/2025).
-/// Hacienda anunció en octubre de 2026 un aplazamiento a octubre de 2028, pendiente de publicarse en el BOE:
-/// cuando se publique, basta con cambiar esta fecha.
+/// El 5/10/2026 Hacienda anunció que la aplazará a octubre de 2028 para que coincida con la factura electrónica
+/// (nota informativa del Ministerio de Hacienda), pero sigue pendiente del BOE: hasta entonces la fecha legal es esta.
+/// Cuando se publique, basta con cambiar esta fecha.
 enum VeriFactu {
     static let obligatorioDesde = Calendar.fiscal.date(from: DateComponents(year: 2027, month: 7, day: 1))!
 
     static func obliga(en fecha: Date) -> Bool { fecha >= obligatorioDesde }
+}
+
+/// Fecha en que las facturas a empresarios y profesionales deben ser electrónicas (formato estructurado UBL,
+/// por la solución pública de la AEAT o una plataforma privada) para quien facture 8 millones de euros o menos al año:
+/// 24 meses después de la Orden HAC/1028/2026 (BOE 5/10/2026, en vigor el 6/10/2026), según la disposición final
+/// cuarta del RD 238/2026. Las facturas a particulares no están obligadas.
+enum FacturaElectronica {
+    static let obligatoriaDesde = Calendar.fiscal.date(from: DateComponents(year: 2028, month: 10, day: 6))!
+
+    static func obliga(en fecha: Date) -> Bool { fecha >= obligatoriaDesde }
 }
 
 /// Datos del emisor tomados de Ajustes.
@@ -392,7 +403,14 @@ struct EmitirConAlDiaView: View {
                     }
                     if VeriFactu.obliga(en: fecha) {
                         Section {
-                            Label("Desde el \(VeriFactu.obligatorioDesde.formatted(date: .long, time: .omitted)) las facturas hechas con programas deben cumplir VeriFactu. Emítela en la app de la AEAT (ficha «Emitir en la AEAT»). Hacienda ha anunciado un aplazamiento a octubre de 2028 pendiente de publicarse.",
+                            Label("Desde el \(VeriFactu.obligatorioDesde.formatted(date: .long, time: .omitted)) las facturas hechas con programas deben cumplir VeriFactu. Emítela en la app de la AEAT (ficha «Emitir en la AEAT»). Hacienda ha anunciado que lo aplazará a octubre de 2028, junto con la factura electrónica, pero aún no está en el BOE.",
+                                  systemImage: "exclamationmark.triangle")
+                                .foregroundStyle(.orange)
+                        }
+                    }
+                    if FacturaElectronica.obliga(en: fecha) {
+                        Section {
+                            Label("Desde el \(FacturaElectronica.obligatoriaDesde.formatted(date: .long, time: .omitted)) las facturas a empresas y autónomos deben ser electrónicas (formato estructurado, por la solución pública de la AEAT o una plataforma): un PDF ya no sirve. A clientes particulares puedes seguir enviándolo en PDF.",
                                   systemImage: "exclamationmark.triangle")
                                 .foregroundStyle(.orange)
                         }

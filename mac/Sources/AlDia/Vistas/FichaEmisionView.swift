@@ -37,6 +37,14 @@ struct FichaEmisionView: View {
                     }
                 }
 
+                if FacturaElectronica.obliga(en: ingreso.fecha) {
+                    Section {
+                        Label("Si el cliente es empresa o autónomo, desde el \(FacturaElectronica.obligatoriaDesde.formatted(date: .long, time: .omitted)) la factura debe ser electrónica: emítela con la solución pública de facturación electrónica de la AEAT (o con una plataforma privada) en lugar de enviar solo el PDF.",
+                              systemImage: "exclamationmark.triangle")
+                            .foregroundStyle(.orange)
+                    }
+                }
+
                 Section("1 · Destinatario (Seleccionar destinatario)") {
                     DatoCopiable(titulo: "Nombre o razón social", valor: ingreso.cliente?.nombre ?? "")
                     DatoCopiable(titulo: "NIF", valor: ingreso.cliente?.nif ?? "")

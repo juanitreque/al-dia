@@ -1130,12 +1130,22 @@
         }
       }
     },
-    "Desde el %@ las facturas hechas con programas deben cumplir VeriFactu. Emítela en la app de la AEAT (ficha «Emitir en la AEAT»). Hacienda ha anunciado un aplazamiento a octubre de 2028 pendiente de publicarse.": {
+    "Desde el %@ las facturas a empresas y autónomos deben ser electrónicas (formato estructurado, por la solución pública de la AEAT o una plataforma): un PDF ya no sirve. A clientes particulares puedes seguir enviándolo en PDF.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "From %@, invoices made with software must comply with VeriFactu. Issue it in the AEAT app (“Issue with the AEAT” sheet). The tax agency has announced a delay to October 2028, not yet published."
+            "value": "From %@, invoices to businesses and self-employed professionals must be electronic (structured format, through the AEAT's public solution or a platform): a PDF is no longer enough. You can keep sending PDFs to private customers."
+          }
+        }
+      }
+    },
+    "Desde el %@ las facturas hechas con programas deben cumplir VeriFactu. Emítela en la app de la AEAT (ficha «Emitir en la AEAT»). Hacienda ha anunciado que lo aplazará a octubre de 2028, junto con la factura electrónica, pero aún no está en el BOE.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From %@, invoices made with software must comply with VeriFactu. Issue it in the AEAT app (“Issue with the AEAT” sheet). The tax agency has announced a delay to October 2028, together with e-invoicing, but it is not in the BOE yet."
           }
         }
       }
@@ -3494,6 +3504,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Services October 2026"
+          }
+        }
+      }
+    },
+    "Si el cliente es empresa o autónomo, desde el %@ la factura debe ser electrónica: emítela con la solución pública de facturación electrónica de la AEAT (o con una plataforma privada) en lugar de enviar solo el PDF.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the customer is a business or self-employed professional, from %@ the invoice must be electronic: issue it with the AEAT's public e-invoicing solution (or a private platform) instead of only sending the PDF."
           }
         }
       }

@@ -126,7 +126,14 @@ public sealed class IngresosVista : Seccion
         }
         if (VeriFactu.Obliga(i.Fecha) && !await Ui.Confirmar(Dueño, "VeriFactu",
                 $"Desde el {Formato.Fecha(VeriFactu.ObligatorioDesde)} las facturas hechas con programas deben cumplir VeriFactu, " +
-                "y Al Día no envía registros a la AEAT. Emite esta factura en la app gratuita de la AEAT. ¿Generar el PDF igualmente?", "Generar"))
+                "y Al Día no envía registros a la AEAT. Emite esta factura en la app gratuita de la AEAT. " +
+                "(Hacienda ha anunciado que lo aplazará a octubre de 2028, junto con la factura electrónica, pero aún no está en el BOE.) " +
+                "¿Generar el PDF igualmente?", "Generar"))
+            return;
+        if (FacturaElectronica.Obliga(i.Fecha) && !await Ui.Confirmar(Dueño, "Factura electrónica",
+                $"Desde el {Formato.Fecha(FacturaElectronica.ObligatoriaDesde)} las facturas a empresas y autónomos deben ser electrónicas " +
+                "(formato estructurado, por la solución pública de la AEAT o una plataforma): un PDF ya no sirve. " +
+                "A clientes particulares puedes seguir enviándolo en PDF. ¿Generar el PDF igualmente?", "Generar"))
             return;
         var duplicado = todos.FirstOrDefault(x => x.Id != i.Id && !x.Borrador && x.Numero == i.Numero);
         if (duplicado is not null)

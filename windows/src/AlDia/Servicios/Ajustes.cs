@@ -59,12 +59,23 @@ public sealed class Emisor
 }
 
 /// <summary>Fecha en que la factura con programas debe cumplir VeriFactu para autónomos (RD 1007/2023, RDL 15/2025).
-/// Hacienda anunció en octubre de 2026 un aplazamiento a octubre de 2028, pendiente del BOE:
-/// cuando se publique, basta con cambiar esta fecha.</summary>
+/// El 5/10/2026 Hacienda anunció que la aplazará a octubre de 2028 para que coincida con la factura electrónica
+/// (nota informativa del Ministerio de Hacienda), pero sigue pendiente del BOE: hasta entonces la fecha legal es esta.
+/// Cuando se publique, basta con cambiar esta fecha.</summary>
 public static class VeriFactu
 {
     public static readonly DateOnly ObligatorioDesde = new(2027, 7, 1);
     public static bool Obliga(DateOnly fecha) => fecha >= ObligatorioDesde;
+}
+
+/// <summary>Fecha en que las facturas a empresarios y profesionales deben ser electrónicas (formato estructurado UBL,
+/// por la solución pública de la AEAT o una plataforma privada) para quien facture 8 millones de euros o menos al año:
+/// 24 meses después de la Orden HAC/1028/2026 (BOE 5/10/2026, en vigor el 6/10/2026), según la disposición final
+/// cuarta del RD 238/2026. Las facturas a particulares no están obligadas.</summary>
+public static class FacturaElectronica
+{
+    public static readonly DateOnly ObligatoriaDesde = new(2028, 10, 6);
+    public static bool Obliga(DateOnly fecha) => fecha >= ObligatoriaDesde;
 }
 
 public static class Formato

@@ -95,6 +95,15 @@ public class AppTests(BaseDemo _) : IClassFixture<BaseDemo>
     }
 
     [Fact]
+    public void FechasDeVeriFactuYFacturaElectronica()
+    {
+        Assert.False(VeriFactu.Obliga(new DateOnly(2027, 6, 30)));
+        Assert.True(VeriFactu.Obliga(new DateOnly(2027, 7, 1)));
+        Assert.False(FacturaElectronica.Obliga(new DateOnly(2028, 10, 5)));
+        Assert.True(FacturaElectronica.Obliga(new DateOnly(2028, 10, 6)));
+    }
+
+    [Fact]
     public void LeeSuPropioPdfComoGasto()
     {
         var i = Almacen.Ingresos().First(x => x.Numero == "2026-002");
