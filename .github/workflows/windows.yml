@@ -9,12 +9,15 @@ on:
     paths: ["windows/**"]
   workflow_dispatch:
 
+# Por defecto, solo lectura. Únicamente el trabajo «release» puede escribir.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   compilar:
     runs-on: windows-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     defaults:
       run:
         shell: pwsh
@@ -31,9 +34,10 @@ jobs:
 
       - name: Versión
         id: version
+        env:
+          ETIQUETA: ${{ github.ref_name }}
         run: |
-          $etiqueta = "${{ github.ref_name }}"
-          if ($etiqueta -like "windows-v*") { $v = $etiqueta -replace '^windows-v', '' } else { $v = "0.0.0-dev" }
+          if ($env:ETIQUETA -like "windows-v*") { $v = $env:ETIQUETA -replace '^windows-v', '' } else { $v = "0.0.0-dev" }
           $numero = $v -replace '-.*$', ''
           "version=$v" >> $env:GITHUB_OUTPUT
           "numero=$numero" >> $env:GITHUB_OUTPUT
@@ -44,7 +48,7 @@ jobs:
       - name: Instalador
         run: |
           if (-not (Get-Command iscc -ErrorAction SilentlyContinue)) {
-            if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup -y --no-progress }
+            if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup --version=6.7.1 -y --no-progress }
             $env:Path += ";${env:ProgramFiles(x86)}\Inno Setup 6"
           }
           iscc /DVersion=${{ steps.version.outputs.version }} installer/AlDia.iss
@@ -62,11 +66,30 @@ jobs:
           name: AlDia-Windows-${{ steps.version.outputs.version }}
           path: windows/installer/salida/*
 
+  release:
+    # Solo al publicar una etiqueta windows-v*; es el único trabajo con permiso de escritura.
+    if: startsWith(github.ref, 'refs/tags/windows-v')
+    needs: compilar
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: windows/installer/NOTAS.md
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: AlDia-Windows-${{ needs.compilar.outputs.version }}
+          path: salida
+
       - name: Release
-        if: startsWith(github.ref, 'refs/tags/windows-v')
         env:
           GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.compilar.outputs.version }}
+          ETIQUETA: ${{ github.ref_name }}
         run: |
-          $v = "${{ steps.version.outputs.version }}"
-          $pre = if ($v -like "*-*") { "--prerelease" } else { "" }
-          gh release create "${{ github.ref_name }}" (Get-ChildItem installer/salida/*).FullName --title "Al Día para Windows $v" --notes-file installer/NOTAS.md $pre
+          pre=""
+          if [[ "$VERSION" == *-* ]]; then pre="--prerelease"; fi
+          gh release create "$ETIQUETA" salida/* --title "Al Día para Windows $VERSION" --notes-file windows/installer/NOTAS.md $pre
