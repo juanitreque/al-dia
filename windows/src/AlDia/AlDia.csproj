@@ -18,7 +18,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <AvaloniaResource Include="Recursos/**" />
+    <AvaloniaResource Include="Recursos/**" Exclude="Recursos/Fuentes/**" />
+    <!-- Lato (SIL OFL 1.1) para la factura en PDF; PDFsharp incrusta solo las letras usadas. -->
+    <EmbeddedResource Include="Recursos/Fuentes/*.ttf" LogicalName="AlDia.Fuentes.%(Filename)%(Extension)" />
+    <None Include="Recursos/Fuentes/OFL.txt" Link="Licencias/Lato-OFL.txt" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +30,8 @@
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.22" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.13" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12" />
-    <PackageReference Include="QuestPDF" Version="2026.9.1" />
+    <!-- 6.2.4 es la última versión MIT: desde la 6.5.0 PDFsharp se publica con AGPL. No actualizar sin revisar la licencia. -->
+    <PackageReference Include="PDFsharp" Version="6.2.4" />
     <PackageReference Include="PdfPig" Version="0.1.16" />
   </ItemGroup>
 

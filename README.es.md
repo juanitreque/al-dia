@@ -91,7 +91,7 @@ mac/                app de macOS (SwiftUI + SwiftData)
   Tests/         tests (Swift Testing) de AlDiaCore
   packaging/     Info.plist, icono y Localizable.xcstrings (castellano de origen, traducción al inglés)
   scripts/       compilación, sincronización de textos e icono
-windows/            app de Windows (.NET 10 + Avalonia, SQLite, QuestPDF)
+windows/            app de Windows (.NET 10 + Avalonia, SQLite, PDFsharp)
   src/AlDia.Core/   la misma lógica fiscal portada a C#
   src/AlDia/        la app: datos, PDF de factura, paquete del gestor, pantallas
   tests/            los mismos casos de prueba (xUnit): dotnet test
@@ -114,6 +114,6 @@ Al Día es una herramienta personal que se comparte tal cual. No tiene relación
 
 ## Licencia
 
-© 2026 juanitreque. Se distribuye bajo la [GNU GPL v3.0 o posterior](LICENSE), con un [permiso adicional](LICENSE-EXCEPTION.md) para enlazar con QuestPDF (que usa la versión de Windows).
+© 2026 juanitreque. Se distribuye bajo la [GNU GPL v3.0 o posterior](LICENSE). Los componentes de terceros se indican en [NOTICE](NOTICE.md).
 
 Puedes descargar el código y compilar Al Día tú mismo gratis. Las versiones hasta la v0.2.0 (macOS) y la windows-v0.1.0-beta se publicaron con licencia MIT.

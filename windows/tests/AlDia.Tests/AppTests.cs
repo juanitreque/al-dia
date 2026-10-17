@@ -43,6 +43,58 @@ public class AppTests(BaseDemo _) : IClassFixture<BaseDemo>
     }
 
     [Fact]
+    public void ConceptoLargoSeRepartePorLineasSinPerderLetras()
+    {
+        var i = Almacen.Ingresos().First(x => x.Numero == "2026-002");
+        var concepto = "Diseño y maquetación de la nueva identidad corporativa con manual de uso, papelería " +
+                       "y plantillas para redes sociales (Ñandú & Cía., «urgente»)";
+        var copia = new Ingreso
+        {
+            Numero = i.Numero, Fecha = i.Fecha, Cliente = i.Cliente, Base = i.Base, CuotaIVA = i.CuotaIVA,
+            TipoIVA = i.TipoIVA, Retencion = i.Retencion, TipoRetencion = i.TipoRetencion,
+            Lineas = [new LineaIngreso { Concepto = concepto, Cantidad = 1, Precio = i.Base }],
+        };
+        var texto = LecturaPdf.Texto(FacturaPdf.Generar(copia));
+        foreach (var palabra in concepto.Split(' ')) Assert.Contains(palabra, texto);
+        Assert.Contains("TOTAL A PAGAR", texto);
+    }
+
+    [Fact]
+    public void BorradorLlevaMarcaDeAgua()
+    {
+        // La marca va girada: se comprueban las letras en orden de dibujo, no por renglones.
+        static string Letras(byte[] pdf)
+        {
+            using var documento = UglyToad.PdfPig.PdfDocument.Open(pdf);
+            return string.Concat(documento.GetPage(1).Letters.Select(l => l.Value));
+        }
+        var i = Almacen.Ingresos().First(x => x.Numero == "2026-002");
+        Assert.Contains("BORRADOR", Letras(FacturaPdf.Generar(i, borrador: true)));
+        Assert.DoesNotContain("BORRADOR", Letras(FacturaPdf.Generar(i)));
+    }
+
+    [Fact]
+    public void MuchasLineasSiguenEnOtraPaginaYLaFuenteSeRecorta()
+    {
+        var i = Almacen.Ingresos().First(x => x.Numero == "2026-002");
+        var lineas = Enumerable.Range(1, 60)
+            .Select(n => new LineaIngreso { Concepto = $"Servicio número {n}", Cantidad = 1, Precio = 10 }).ToList();
+        var larga = new Ingreso
+        {
+            Numero = "2026-099", Fecha = i.Fecha, Cliente = i.Cliente, Base = 600, CuotaIVA = 126, Lineas = lineas,
+        };
+        var pdf = FacturaPdf.Generar(larga);
+        using var documento = UglyToad.PdfPig.PdfDocument.Open(pdf);
+        Assert.True(documento.NumberOfPages >= 2);
+        var texto = LecturaPdf.Texto(pdf);
+        Assert.Contains("Servicio número 1 ", texto);
+        Assert.Contains("Servicio número 60 ", texto);
+        Assert.Contains("726,00 €", texto);
+        // PDFsharp incrusta solo las letras usadas: con la fuente completa pasaría de 600 KB.
+        Assert.True(pdf.Length < 150_000, $"El PDF ocupa {pdf.Length} bytes");
+    }
+
+    [Fact]
     public void LeeSuPropioPdfComoGasto()
     {
         var i = Almacen.Ingresos().First(x => x.Numero == "2026-002");
