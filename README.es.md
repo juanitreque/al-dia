@@ -3,7 +3,7 @@
 **Contabilidad sencilla para autónomos en España: apps nativas para Mac y Windows.**
 Mantente al día con Hacienda: prepara tus facturas, apunta los gastos deducibles y ten calculados tus modelos trimestrales (303 / 130), casilla por casilla.
 
-[Read in English](README.md) · macOS 15+ (Swift/SwiftUI) · Windows 10/11 (.NET/Avalonia, beta) · [MIT](LICENSE)
+[Read in English](README.md) · macOS 15+ (Swift/SwiftUI) · Windows 10/11 (.NET/Avalonia, beta) · [GPL-3.0-or-later](LICENSE)
 
 ![Panel de Al Día](docs/img/es-panel.jpg)
 
@@ -114,4 +114,6 @@ Al Día es una herramienta personal que se comparte tal cual. No tiene relación
 
 ## Licencia
 
-[MIT](LICENSE) © juanitreque
+© 2026 juanitreque. Se distribuye bajo la [GNU GPL v3.0 o posterior](LICENSE), con un [permiso adicional](LICENSE-EXCEPTION.md) para enlazar con QuestPDF (que usa la versión de Windows).
+
+Puedes descargar el código y compilar Al Día tú mismo gratis. Las versiones hasta la v0.2.0 (macOS) y la windows-v0.1.0-beta se publicaron con licencia MIT.

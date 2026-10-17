@@ -3,7 +3,7 @@
 **Simple bookkeeping for Spanish *autónomos* — native apps for macOS and Windows.**
 Stay up to date with Hacienda: prepare invoices, log deductible expenses and get your quarterly tax forms (303 / 130) calculated, box by box.
 
-[Leer en castellano](README.es.md) · macOS 15+ (Swift/SwiftUI) · Windows 10/11 (.NET/Avalonia, beta) · [MIT](LICENSE)
+[Leer en castellano](README.es.md) · macOS 15+ (Swift/SwiftUI) · Windows 10/11 (.NET/Avalonia, beta) · [GPL-3.0-or-later](LICENSE)
 
 ![Al Día dashboard](docs/img/en-dashboard.jpg)
 
@@ -114,4 +114,6 @@ Al Día is a personal tool shared as is. It is not affiliated with the Agencia T
 
 ## License
 
-[MIT](LICENSE) © juanitreque
+© 2026 juanitreque. Released under the [GNU GPL v3.0 or later](LICENSE), with an [additional permission](LICENSE-EXCEPTION.md) to link with QuestPDF (used by the Windows version).
+
+You can download the source and build Al Día yourself for free. Versions up to v0.2.0 (macOS) and windows-v0.1.0-beta were released under the MIT License.
